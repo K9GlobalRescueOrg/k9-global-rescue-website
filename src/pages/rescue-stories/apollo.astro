@@ -1,0 +1,233 @@
+---
+import Layout from "../../components/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import CTASection from "../../components/CTASection.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+---
+
+<Layout title="Apollo's Journey" description="Apollo's rescue journey from a cage in South Korea to safety, surgery, and a new life in Colorado.">
+  <Hero
+    eyebrow="Rescue Stories"
+    title="Apollo's Journey"
+    text="From a cage in South Korea to safety, surgery, and a new life in Colorado."
+    primaryLabel="Donate"
+    primaryHref="/donate/"
+    secondaryLabel="Back To Stories"
+    secondaryHref="/rescue-stories/"
+  />
+
+  <section class="section">
+    <div class="container story-shell">
+      <article class="story-article">
+        <p class="eyebrow">Apollo</p>
+        <h2>One Animal, One Decision, One Chance.</h2>
+        <p class="lead">
+          On April 23, 2017, while investigating and mapping dog farms in South Korea, K9 Global Rescue found two dogs confined in small cages behind a family home in the countryside. The dogs were in clear distress. Although the owners claimed they were family pets, K9GR believed the dogs were being raised for sale to dog meat traders.
+        </p>
+        <p>
+          After negotiations, the owners agreed to surrender the dogs. K9GR did not pay for either dog.
+        </p>
+
+        <section class="story-section">
+          <h3>Found In South Korea</h3>
+          <p>
+            The younger dog, later named Apollo, was approximately six months old. He had been born inside the cage and had known only confinement during the first months of his life.
+          </p>
+        </section>
+
+        <section class="story-section">
+          <h3>The Damage Caused By The Cage</h3>
+          <p>
+            The cage had a steel mesh floor. To keep his feet from falling through the wire, Apollo pushed against the mesh as he grew. Over time, that pressure damaged his development and caused his paws to grow sideways.
+          </p>
+        </section>
+
+        <section class="story-section">
+          <h3>The Journey To The United States</h3>
+          <p>
+            On June 6, Apollo was cleared to leave Korea and made the journey to the United States with one of K9GR's founders. Apollo went to Denver, where he lives with Jon, K9GR's founder, and his family.
+          </p>
+        </section>
+
+        <section class="story-section">
+          <h3>Surgery, Recovery, And A New Life</h3>
+          <p>
+            After multiple veterinary visits and consultations, Apollo required two extensive surgeries and therapy to straighten his paws as much as possible. His recovery was not simple, but Apollo remained gentle, loving, and trusting.
+          </p>
+          <p>
+            Some dogs stay with you forever. Apollo is one of them. His story is a reminder that rescue is not abstract. It is one animal, one decision, one chance at a different life.
+          </p>
+        </section>
+
+        <blockquote>
+          "Saving one dog will not change the world, but for that one dog the world will change forever."
+        </blockquote>
+      </article>
+
+      <aside class="story-side" aria-label="Apollo story photos and actions">
+        <figure class="story-photo primary-photo">
+          <img src="/assets/apollo-rescue-story.jpg" alt="Apollo sitting on grass wearing a K9GR collar after rescue and recovery." loading="lazy" decoding="async" />
+          <figcaption>Apollo after rescue and recovery.</figcaption>
+        </figure>
+        <figure class="story-photo">
+          <img src="/assets/apollo-recovery-story.jpg" alt="Apollo resting in a vehicle with bandaged front legs during recovery." loading="lazy" decoding="async" />
+          <figcaption>Apollo during treatment and recovery.</figcaption>
+        </figure>
+        <p>
+          Apollo's story is part of K9 Global Rescue's work to help animals in crisis reach care, safety, and support.
+        </p>
+        <div class="button-row">
+          <a class="button primary" href="/donate/">Donate</a>
+          <a class="button secondary" href="/volunteer/">Volunteer</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Rescue video"
+        title="Apollo's Rescue."
+        text="Footage from the day Apollo was discovered during K9 Global Rescue field work in South Korea."
+      />
+      <div class="video-panel">
+        <video controls preload="metadata" playsinline>
+          <source src="/assets/apollo-rescue-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Support Rescue Work Like Apollo's."
+    text="Help K9 Global Rescue support animals in crisis through rescue coordination, medical care, transport, and trusted partner work."
+    primaryLabel="Donate"
+    primaryHref="/donate/"
+    secondaryLabel="More Stories"
+    secondaryHref="/rescue-stories/"
+  />
+</Layout>
+
+<style>
+  .story-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: start;
+  }
+
+  .story-article {
+    max-width: 820px;
+  }
+
+  .story-article h2 {
+    margin-bottom: 1rem;
+    color: var(--color-ivory);
+  }
+
+  .story-article > p,
+  .story-section p {
+    color: var(--color-ink-soft);
+    font-size: 1.04rem;
+    line-height: 1.65;
+  }
+
+  .story-section {
+    margin-top: 2rem;
+    padding-top: 1.35rem;
+    border-top: 1px solid rgba(232, 180, 72, 0.22);
+  }
+
+  .story-section h3 {
+    margin-bottom: 0.65rem;
+    color: var(--color-gold);
+  }
+
+  blockquote {
+    margin: 2rem 0 0;
+    padding: 1.35rem 1.5rem;
+    border-left: 5px solid var(--color-gold);
+    background: #090a07;
+    color: var(--color-ivory);
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    font-weight: 900;
+    line-height: 1.35;
+  }
+
+  .video-panel {
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    border-radius: var(--radius);
+    background: var(--color-black);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .video-panel video {
+    display: block;
+    width: 100%;
+    max-height: 680px;
+    background: var(--color-black);
+  }
+
+  .story-side {
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+    color: var(--color-ivory);
+  }
+
+  .story-side p {
+    color: var(--color-ink-soft);
+    font-weight: 800;
+    line-height: 1.55;
+  }
+
+  .story-photo {
+    margin: 0;
+    max-width: 320px;
+  }
+
+  .story-photo img {
+    width: 100%;
+    display: block;
+    border: 1px solid rgba(232, 180, 72, 0.24);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    object-fit: cover;
+  }
+
+  .primary-photo img {
+    aspect-ratio: 4 / 5;
+    object-position: center 34%;
+  }
+
+  .story-photo:not(.primary-photo) img {
+    aspect-ratio: 4 / 3;
+    object-position: center 44%;
+  }
+
+  .story-photo figcaption {
+    margin-top: 0.55rem;
+    color: var(--color-ink-soft);
+    font-size: 0.88rem;
+    font-weight: 800;
+  }
+
+  @media (max-width: 860px) {
+    .story-shell {
+      grid-template-columns: 1fr;
+    }
+
+    .story-side {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      align-items: start;
+    }
+
+    .story-side p,
+    .story-side .button-row {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

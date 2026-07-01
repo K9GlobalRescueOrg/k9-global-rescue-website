@@ -4,34 +4,39 @@ import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 ---
 
-<Layout title="Contact" description="Contact K9 Global Rescue for general inquiries, volunteer interest, donation questions, and partner inquiries.">
+<Layout title="Contact" description="Contact K9 Global Rescue for general questions, donation questions, partnership inquiries, media inquiries, rescue-related inquiries, and other non-volunteer communication.">
   <Hero
     eyebrow="Contact"
-    title="Reach The Right Inquiry Path."
-    text="General, volunteer, donation, partner, and media inquiries."
-    primaryLabel="Donate"
-    primaryHref="/donate/"
+    title="Send A General Inquiry."
+    text="Use the contact form for questions, donation, partnership, media, rescue-related, and other non-volunteer communication."
+    primaryLabel="Use Contact Form"
+    primaryHref="#contact-form"
     secondaryLabel="Volunteer"
     secondaryHref="/volunteer/"
   />
 
-  <section class="section">
+  <section class="section" id="contact-form">
     <div class="container split">
       <div>
         <SectionHeading
-          eyebrow="Contact options"
-          title="General, Volunteer, Donation, And Partner Inquiries."
-          text="Use this form for general questions, volunteer interest, donation questions, partner inquiries, and media requests."
+          eyebrow="General contact"
+          title="Questions And Inquiries."
+          text="This form is for general communication, donation questions, partnership inquiries, media requests, rescue-related inquiries, and other non-volunteer messages."
         />
         <ul class="check-list">
-          <li>General inquiry</li>
-          <li>Volunteer inquiry</li>
-          <li>Donation or campaign question</li>
-          <li>Partner, media, or corporate support inquiry</li>
+          <li>General questions.</li>
+          <li>Donation questions.</li>
+          <li>Partnership, media, or rescue-related inquiries.</li>
+          <li>Other non-volunteer communication.</li>
         </ul>
+        <p class="contact-note">Interested in volunteering? Visit the <a href="/volunteer/">Volunteer page</a> to complete the official intake form.</p>
       </div>
-      <form class="panel text-panel form-grid" name="contact" method="POST" data-netlify="true">
+      <form class="panel text-panel form-grid" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact" />
+        <label class="field bot-field">
+          Do not fill this out if you are human
+          <input name="bot-field" autocomplete="off" tabindex="-1" />
+        </label>
         <label class="field">
           Name
           <input name="name" type="text" autocomplete="name" required />
@@ -41,13 +46,19 @@ import SectionHeading from "../components/SectionHeading.astro";
           <input name="email" type="email" autocomplete="email" required />
         </label>
         <label class="field">
+          Phone <span>optional</span>
+          <input name="phone" type="tel" autocomplete="tel" />
+        </label>
+        <label class="field">
           Inquiry type
           <select name="inquiry_type" required>
             <option value="">Select one</option>
-            <option>General inquiry</option>
-            <option>Volunteer inquiry</option>
-            <option>Donation or partner inquiry</option>
-            <option>Media inquiry</option>
+            <option>General Question</option>
+            <option>Donation Question</option>
+            <option>Partnership Inquiry</option>
+            <option>Media Inquiry</option>
+            <option>Rescue Inquiry</option>
+            <option>Other</option>
           </select>
         </label>
         <label class="field">
@@ -59,3 +70,21 @@ import SectionHeading from "../components/SectionHeading.astro";
     </div>
   </section>
 </Layout>
+
+<style>
+  .contact-note {
+    color: var(--color-ink-soft);
+    margin-top: 1.25rem;
+    max-width: 620px;
+  }
+
+  .field span {
+    color: var(--color-ink-soft);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .bot-field {
+    display: none;
+  }
+</style>

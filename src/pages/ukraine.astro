@@ -37,6 +37,22 @@ import CTASection from "../components/CTASection.astro";
 
   <section class="section alt">
     <div class="container">
+      <SectionHeading
+        eyebrow="Field video"
+        title="Running From War."
+        text="A short trailer of scenes from K9 Global Rescue team support for animal rescue work in Ukraine, showing a small part of the danger and loss created by war."
+      />
+      <div class="video-panel">
+        <video controls preload="metadata" playsinline>
+          <source src="/assets/ukraine-running-from-war-web.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
       <div class="note">
         <strong>Current Information:</strong> For the latest Ukraine support details, contact the K9 Global Rescue team.
       </div>
@@ -48,3 +64,20 @@ import CTASection from "../components/CTASection.astro";
     text="Donations help support humanitarian aid, animal medical support, supplies, evacuations, and rescue partner work."
   />
 </Layout>
+
+<style>
+  .video-panel {
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    border-radius: var(--radius);
+    background: var(--color-black);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .video-panel video {
+    display: block;
+    width: 100%;
+    max-height: 680px;
+    background: var(--color-black);
+  }
+</style>

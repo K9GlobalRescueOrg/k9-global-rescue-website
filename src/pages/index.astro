@@ -3,7 +3,6 @@ import Layout from "../components/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import ProgramCard from "../components/ProgramCard.astro";
-import StoryCard from "../components/StoryCard.astro";
 import CTASection from "../components/CTASection.astro";
 import QuoteBand from "../components/QuoteBand.astro";
 
@@ -99,33 +98,6 @@ const actions = [
       />
       <div class="grid cards">
         {programs.map((program) => <ProgramCard {...program} />)}
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <SectionHeading
-        eyebrow="Rescue stories"
-        title="Individual Rescue Stories."
-        text="Gracie, Apollo and Juno, Jesse, Ukraine, and Korea stories will be shared as updates become available."
-      />
-      <div class="grid cards">
-        <StoryCard
-          title="Gracie"
-          text="A rescue story from the Korea and Asia program area."
-          href="/rescue-stories/"
-        />
-        <StoryCard
-          title="Apollo & Juno"
-          text="A rescue journey connected to the organization’s global work."
-          href="/rescue-stories/"
-        />
-        <StoryCard
-          title="Ukraine Rescue Stories"
-          text="Field updates and rescue stories connected to Ukraine support."
-          href="/rescue-stories/"
-        />
       </div>
     </div>
   </section>

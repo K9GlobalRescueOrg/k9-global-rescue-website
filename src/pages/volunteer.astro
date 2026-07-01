@@ -16,7 +16,7 @@ const volunteerFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfcv8pCy5hDpN
     primaryHref={volunteerFormUrl}
     primaryTarget="_blank"
     primaryRel="noopener noreferrer"
-    secondaryLabel="Contact"
+    secondaryLabel="Ask a Question"
     secondaryHref="/contact/"
   />
 
@@ -39,18 +39,26 @@ const volunteerFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfcv8pCy5hDpN
         <h3>Volunteer Intake</h3>
         <p>Volunteer interest is evaluated by the K9 Global Rescue team. Submitting the form does not guarantee immediate placement or deployment.</p>
         <a class="button primary" href={volunteerFormUrl} target="_blank" rel="noopener noreferrer">Apply to Volunteer</a>
+        <p class="question-note">For general questions, use the <a href="/contact/">contact form</a>. For volunteer applications, complete the official volunteer intake form.</p>
       </div>
     </div>
   </section>
 
   <CTASection
     title="Ready Volunteers Make Response Easier."
-    text="Share your background, availability, and relevant skills through the official intake form."
+    text="For general questions, use the contact form. For volunteer applications, complete the official volunteer intake form."
     primaryLabel="Apply to Volunteer"
     primaryHref={volunteerFormUrl}
     primaryTarget="_blank"
     primaryRel="noopener noreferrer"
-    secondaryLabel="Contact"
+    secondaryLabel="Ask a Question"
     secondaryHref="/contact/"
   />
 </Layout>
+
+<style>
+  .question-note {
+    color: var(--color-ink-soft);
+    margin: 1rem 0 0;
+  }
+</style>

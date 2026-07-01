@@ -1,14 +1,26 @@
 ---
-const { title, text, href = "/rescue-stories/", tag = "Rescue story" } = Astro.props;
+const {
+  title,
+  text,
+  href,
+  tag = "Rescue story",
+  image,
+  imageAlt = "",
+  imagePosition = "center 22%"
+} = Astro.props;
 ---
 
 <article class="story-card">
-  <div class="story-image" aria-hidden="true"></div>
+  {image ? (
+    <img class="story-image" src={image} alt={imageAlt} style={`object-position: ${imagePosition};`} loading="lazy" decoding="async" />
+  ) : (
+    <div class="story-image fallback" aria-hidden="true"></div>
+  )}
   <div class="story-copy">
     <span>{tag}</span>
     <h3>{title}</h3>
     <p>{text}</p>
-    <a href={href}>Read story</a>
+    {href && <a href={href}>Read story</a>}
   </div>
 </article>
 
@@ -23,12 +35,30 @@ const { title, text, href = "/rescue-stories/", tag = "Rescue story" } = Astro.p
   }
 
   .story-image {
-    min-height: 132px;
+    width: 100%;
+    height: clamp(220px, 28vw, 280px);
+    display: block;
+    object-fit: cover;
+  }
+
+  .story-image.fallback {
     background:
-      linear-gradient(135deg, rgba(0, 0, 0, 0.84), rgba(232, 180, 72, 0.2)),
-      url("https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=900&q=80");
+      linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(232, 180, 72, 0.18)),
+      radial-gradient(circle at 24% 18%, rgba(232, 180, 72, 0.22), transparent 28%),
+      #050604;
     background-position: center;
     background-size: cover;
+  }
+
+  .story-image.fallback::after {
+    content: "K9";
+    display: grid;
+    min-height: 180px;
+    place-items: center;
+    color: rgba(232, 180, 72, 0.32);
+    font-size: 4rem;
+    font-weight: 950;
+    letter-spacing: 0;
   }
 
   .story-copy {

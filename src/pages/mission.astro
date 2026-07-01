@@ -4,19 +4,23 @@ import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import ProgramCard from "../components/ProgramCard.astro";
 
-const pillars = [
-  ["Global Animal Rescue", "Rescue operations for animals in urgent need."],
-  ["Disaster Relief", "Supplies, transport, coordination, and crisis response."],
-  ["Ending Cruelty And Dog Meat Trade", "Rescue and advocacy for dogs facing severe cruelty."],
-  ["Medical Care And Disease Mitigation", "Veterinary care, vaccination, spay/neuter, and health support."],
-  ["Transport And Adoption Support", "Moving rescued animals toward safety, care, and placement."],
-  ["Military And International Programs", "Careful cooperation with service-connected and global partners."],
-  ["Sanctuary And Rehabilitation", "Recovery support for abused, disabled, older, or traumatized animals."],
-  ["Wildlife Trafficking Advocacy", "Anti-trafficking and anti-poaching advocacy for animals without a voice."]
+const focusAreas = [
+  [
+    "Rescue & Crisis Support",
+    "Supporting animals facing urgent danger, displacement, or neglect."
+  ],
+  [
+    "Transport & Safe Placement",
+    "Helping move animals toward care, shelter, rescue partners, and adoption pathways."
+  ],
+  [
+    "Global Partner Support",
+    "Working with trusted partners, volunteers, and field teams to support rescue efforts across borders."
+  ]
 ];
 ---
 
-<Layout title="Our Mission" description="K9 Global Rescue mission pillars for rescue, relief, medical care, transport, sanctuary support, and advocacy.">
+<Layout title="Our Mission" description="K9 Global Rescue focuses on animals in crisis, rescue coordination, transport, medical care, emergency support, and trusted partner work.">
   <Hero
     eyebrow="Our Mission"
     title="Rescue, Relief, Advocacy, And Recovery."
@@ -30,12 +34,12 @@ const pillars = [
   <section class="section">
     <div class="container">
       <SectionHeading
-        eyebrow="Mission pillars"
-        title="The Work At A Glance."
-        text="K9GR’s mission spans rescue, relief, care, transport, recovery, and advocacy."
+        eyebrow="Our focus"
+        title="Our Focus"
+        text="K9 Global Rescue focuses on animals in crisis, emergency support, rescue coordination, transport, medical care, and trusted partner work where help is needed most."
       />
       <div class="grid cards">
-        {pillars.map(([title, text]) => <ProgramCard title={title} text={text} href="/operations/" label="View operations" />)}
+        {focusAreas.map(([title, text]) => <ProgramCard title={title} text={text} href="/operations/" label="Learn more" />)}
       </div>
     </div>
   </section>

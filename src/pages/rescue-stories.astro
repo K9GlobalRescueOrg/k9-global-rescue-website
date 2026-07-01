@@ -5,35 +5,157 @@ import SectionHeading from "../components/SectionHeading.astro";
 import StoryCard from "../components/StoryCard.astro";
 
 const stories = [
-  ["Gracie", "A featured rescue story from the Korea and Asia program area."],
-  ["Apollo & Juno", "A rescue journey connected to care, transport, and recovery."],
-  ["Jesse", "A story centered on survival, rehabilitation, and safety."],
-  ["Ukraine Rescue Stories", "Field updates and rescue stories connected to Ukraine support."],
-  ["Korea Rescue Stories", "Stories and images from rescue work in Korea and Asia."]
+  {
+    title: "Gracie",
+    text: "An individual rescue story from K9 Global Rescue's work.",
+    tag: "Individual story"
+  },
+  {
+    title: "Apollo's Journey",
+    text: "From a cage in South Korea to safety, surgery, and a new life in Colorado.",
+    href: "/rescue-stories/apollo/",
+    image: "/assets/apollo-rescue-story.jpg",
+    imageAlt: "Apollo sitting on grass wearing a K9GR collar after rescue and recovery.",
+    imagePosition: "center 14%"
+  },
+  {
+    title: "Jesse",
+    text: "Rescued from a dog meat farm in May 2018 and later adopted by Jon Barocas.",
+    href: "#jesse",
+    image: "/assets/jesse-rescue-story.jpg",
+    imageAlt: "Jesse, a black and white English Setter, sitting on grass after rescue and recovery.",
+    imagePosition: "center 18%"
+  },
+  {
+    title: "Moose",
+    text: "Rescued from a dog meat farm in Busan, South Korea, Moose's story is one of survival, trust, and a second chance.",
+    href: "/rescue-stories/moose/",
+    image: "/assets/moose-portrait-story.jpg",
+    imageAlt: "Moose wearing a blue collar after rescue and recovery.",
+    imagePosition: "center 12%"
+  }
 ];
 ---
 
-<Layout title="Rescue Stories" description="K9 Global Rescue story index for Gracie, Apollo and Juno, Jesse, Ukraine rescue stories, and Korea rescue stories.">
+<Layout title="Rescue Stories" description="K9 Global Rescue individual rescue stories for Gracie, Apollo, Jesse, and Moose.">
   <Hero
     eyebrow="Rescue Stories"
     title="Individual Lives At The Center Of The Mission."
-    text="Rescue stories will be shared as public updates become available."
+    text="Read selected rescue stories from K9 Global Rescue field work, care, recovery, and safe placement."
     primaryLabel="Donate"
     primaryHref="/donate/"
-    secondaryLabel="Korea & Asia"
-    secondaryHref="/korea-asia/"
   />
 
   <section class="section">
     <div class="container">
       <SectionHeading
         eyebrow="Story library"
-        title="Stories From The Work."
-        text="Follow individual rescue journeys, recovery updates, and regional field stories."
+        title="Individual Rescue Stories."
+        text="Follow individual rescue journeys, recovery, and safe placement."
       />
       <div class="grid cards">
-        {stories.map(([title, text]) => <StoryCard title={title} text={text} />)}
+        {stories.map((story) => <StoryCard {...story} />)}
       </div>
     </div>
   </section>
+
+  <section class="section alt" id="jesse">
+    <div class="container">
+      <article class="story-detail">
+        <div class="story-detail-grid">
+          <div>
+            <p class="eyebrow">Jesse</p>
+            <h2>From A Dog Meat Farm To Safety.</h2>
+            <p class="lead">
+              In May 2018, K9 Global Rescue entered a dog meat farm with local police and city environmental authorities. The team had visited the site before. This time, the violations were immediately clear.
+            </p>
+            <div class="story-body">
+              <p>
+                Near the entrance, one cage held seven dogs. In the back of that cage was an English Setter. She was shaking uncontrollably, clearly traumatized, and appeared to be a stolen pet.
+              </p>
+              <p>
+                With authorities present, the farm owner was questioned. He admitted the dog could have been stolen, though he claimed he did not know. The K9GR team insisted that she be turned over. The owner resisted and wanted payment, but K9GR does not pay for dogs. Paying a dog meat farm only gives the owner money to buy or steal more dogs. After the threat of charges and fines, the owner agreed to release her to K9 Global Rescue.
+              </p>
+              <p>
+                The team named her Jesse. A quick triage showed she was not only traumatized, but also suffering from pneumonia and severe malnutrition. On the ride to the veterinarian, Jesse curled into the lap of Jon Barocas in the front seat and shook uncontrollably. After a few minutes, the shaking stopped. Her eyes brightened. She understood the team was not there to hurt her. They were there to save her.
+              </p>
+              <p>
+                Jesse was treated by a veterinarian for five days, tested negative for disease, and then moved into foster care for five weeks. She weighed 13 pounds when she was rescued. Today, she weighs 35 pounds.
+              </p>
+              <p>
+                Her transformation from a traumatized, sick dog into a healthy, loving companion has been extraordinary. Jesse was adopted by Jon and now lives with his family. Her life is a reminder of why this work matters: every dog deserves safety, care, and the chance to live without fear.
+              </p>
+            </div>
+          </div>
+          <figure class="story-portrait">
+            <img src="/assets/jesse-rescue-story.jpg" alt="Jesse, a black and white English Setter, sitting on grass after rescue and recovery." loading="lazy" decoding="async" />
+            <figcaption>Jesse after rescue and recovery.</figcaption>
+          </figure>
+        </div>
+      </article>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .story-detail {
+    max-width: 1060px;
+  }
+
+  .story-detail h2 {
+    margin-bottom: 1rem;
+  }
+
+  .story-detail-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+    gap: clamp(1.25rem, 3vw, 2rem);
+    align-items: start;
+  }
+
+  .story-body {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .story-body p {
+    color: #211a10;
+    font-size: 1.04rem;
+    line-height: 1.65;
+    max-width: 78ch;
+  }
+
+  .story-portrait {
+    margin: 0;
+    max-width: 300px;
+  }
+
+  .story-portrait img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    display: block;
+    border: 1px solid rgba(232, 180, 72, 0.36);
+    border-radius: var(--radius);
+    object-fit: cover;
+    object-position: center 36%;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .story-portrait figcaption {
+    margin-top: 0.65rem;
+    color: #5a4b35;
+    font-size: 0.9rem;
+    font-weight: 800;
+  }
+
+  @media (max-width: 860px) {
+    .story-detail-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .story-portrait {
+      max-width: 320px;
+    }
+  }
+</style>

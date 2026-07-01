@@ -7,9 +7,11 @@ import ProgramCard from "../components/ProgramCard.astro";
 const ops = [
   { title: "Korea & Asia", text: "Dog meat trade rescue, rehabilitation, transport, and advocacy.", href: "/korea-asia/" },
   { title: "Ukraine", text: "Humanitarian aid, animal medical aid, evacuations, and partner support.", href: "/ukraine/" },
-  { title: "Middle East", text: "Regional rescue work, partner support, and animal welfare coordination.", href: "/middle-east/" },
   { title: "Disaster Relief", text: "Supplies, transport, crisis response, and partner support.", href: "/disaster-relief/" },
-  { title: "Military Programs", text: "Service-connected volunteers, disease mitigation, and working dog support themes.", href: "/military-international-programs/" }
+  { title: "Rescue Coordination", text: "Trusted partner work, urgent response paths, and practical support where help is needed most.", href: "/contact/" },
+  { title: "Transport And Partner Support", text: "Helping animals move toward care, shelter, rescue partners, and adoption pathways.", href: "/mission/" },
+  { title: "Medical Care And Emergency Aid", text: "Support for medical needs, food, supplies, shelter, and emergency response.", href: "/donate/" },
+  { title: "Volunteer And Partner Network", text: "Volunteer interest, partner inquiries, logistics support, and field-ready coordination.", href: "/volunteer/" }
 ];
 ---
 
@@ -28,9 +30,9 @@ const ops = [
   <section class="section">
     <div class="container">
       <SectionHeading
-        eyebrow="Program map"
+        eyebrow="Operations focus"
         title="Where The Mission Is Focused."
-        text="Explore the program areas that organize K9GR’s rescue, relief, transport, and advocacy work."
+        text="Explore current program areas and support lanes for rescue, relief, transport, care, and trusted partner work."
       />
       <div class="grid cards">
         {ops.map((op) => <ProgramCard {...op} />)}

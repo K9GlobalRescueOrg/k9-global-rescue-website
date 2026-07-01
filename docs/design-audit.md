@@ -2,7 +2,7 @@
 
 Date: 2026-07-01
 
-Scope: `/`, `/about/`, `/mission/`, `/operations/`, `/korea-asia/`, `/ukraine/`, `/disaster-relief/`, `/military-international-programs/`, `/middle-east/`, `/rescue-stories/`, `/meet-the-team/`, `/volunteer/`, `/donate/`, `/media/`, `/partners/`, `/contact/`.
+Scope: `/`, `/about/`, `/mission/`, `/operations/`, `/korea-asia/`, `/ukraine/`, `/disaster-relief/`, `/rescue-stories/`, `/meet-the-team/`, `/volunteer/`, `/donate/`, `/media/`, `/partners/`, `/contact/`.
 
 ## Taste Skill Install Changes
 
@@ -51,8 +51,6 @@ The site already has the right directional foundation: black and gold brand pale
 | `/korea-asia/` | Serious subject matter is handled carefully. Story/gallery area currently reads like placeholders and should wait for verified story/image content. |
 | `/ukraine/` | Cautious, credible copy. "Current Information" note is useful but visually plain; the generic dog image does not reflect Ukraine-specific work. |
 | `/disaster-relief/` | Clear and restrained. Four equal cards are generic; disaster response would benefit from a more operational checklist or response-flow layout. |
-| `/military-international-programs/` | Appropriately careful wording. "Themes" language is safe but tentative; future content should clarify current programs once approved. |
-| `/middle-east/` | Too thin compared with other program pages. Needs either more verified content or a more intentional contact/inquiry layout. |
 | `/rescue-stories/` | Avoids fabricated story detail, which is good. Repeated cards with the same stock image risk implying completed stories. |
 | `/meet-the-team/` | Strongest content depth. Initial-based photo blocks are safe but can feel unfinished; bios are long but readable because of details disclosure. |
 | `/volunteer/` | Clear volunteer action and honest placement language. A public review/scaffolding sentence was rewritten to keep the page donor-facing and operational. |
@@ -70,7 +68,7 @@ The site already has the right directional foundation: black and gold brand pale
 5. Story cards imply distinct rescue stories while most story content is not yet available.
 6. Some page areas still feel scaffolded because verified media, donation paths, or story depth are not yet available.
 7. Donate page has no real donation path yet, so the donor flow is contact-only and underpowered.
-8. Middle East page is very thin and feels unfinished.
+8. Some removed or inactive program areas should stay out of public navigation unless approved current content is provided.
 9. Navigation has no current-page state and may feel dense at tablet widths.
 10. Gold accents are directionally correct but sometimes overused across grids, borders, labels, and backgrounds.
 

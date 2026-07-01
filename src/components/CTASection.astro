@@ -9,7 +9,11 @@ const {
   secondaryLabel,
   secondaryHref,
   secondaryTarget,
-  secondaryRel
+  secondaryRel,
+  tertiaryLabel,
+  tertiaryHref,
+  tertiaryTarget,
+  tertiaryRel
 } = Astro.props;
 ---
 
@@ -23,6 +27,7 @@ const {
     <div class="button-row">
       <a class="button primary" href={primaryHref} target={primaryTarget} rel={primaryRel}>{primaryLabel}</a>
       {secondaryLabel && <a class="button secondary" href={secondaryHref} target={secondaryTarget} rel={secondaryRel}>{secondaryLabel}</a>}
+      {tertiaryLabel && <a class="button secondary" href={tertiaryHref} target={tertiaryTarget} rel={tertiaryRel}>{tertiaryLabel}</a>}
     </div>
   </div>
 </section>

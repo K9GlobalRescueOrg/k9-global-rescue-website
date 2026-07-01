@@ -2,7 +2,6 @@
 import Layout from "../components/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
-import StoryCard from "../components/StoryCard.astro";
 import CTASection from "../components/CTASection.astro";
 ---
 
@@ -42,15 +41,15 @@ import CTASection from "../components/CTASection.astro";
   <section class="section alt">
     <div class="container">
       <SectionHeading
-        eyebrow="Rescue stories"
-        title="Featured Rescue Stories And Gallery Areas."
-        text="Stories and images from this program area will be shared as updates become available."
+        eyebrow="Field video"
+        title="Information From The Field."
+        text="A field update from K9 Global Rescue Executive Director Jon Barocas on the Korea and Asia program area."
       />
-      <div class="grid cards">
-        <StoryCard title="Gracie" text="A featured rescue story from the Korea and Asia program area." />
-        <StoryCard title="Apollo & Juno" text="A rescue journey connected to transport, care, and recovery." />
-        <StoryCard title="Jesse" text="A story centered on survival, rehabilitation, and safety." />
-        <StoryCard title="Korea Gallery" text="Images and updates from rescue work in Korea and Asia." />
+      <div class="video-panel">
+        <video controls preload="metadata" playsinline>
+          <source src="/assets/korea-asia-field-video-web.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   </section>
@@ -60,3 +59,20 @@ import CTASection from "../components/CTASection.astro";
     text="Donations help support rescue operations, medical care, food, shelter, transport, and emergency response."
   />
 </Layout>
+
+<style>
+  .video-panel {
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    border-radius: var(--radius);
+    background: var(--color-black);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .video-panel video {
+    display: block;
+    width: 100%;
+    max-height: 680px;
+    background: var(--color-black);
+  }
+</style>

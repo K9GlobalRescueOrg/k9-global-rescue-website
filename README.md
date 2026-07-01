@@ -58,6 +58,10 @@ npm run preview
 
 Astro outputs the static production build to `dist/`.
 
+## Video Assets
+
+Original video masters are stored outside the repo. Only web-optimized compressed video files should be committed. Do not commit video files over 100MB.
+
 ## Netlify Deployment Settings
 
 Use these settings when creating the Netlify site:
@@ -70,15 +74,14 @@ No real domain is connected in this repo. Domain/DNS setup should happen separat
 
 ## Site Structure
 
-- Home: mission hero, CTAs, focus areas, operations overview, story placeholders, donation CTA
+- Home: mission hero, CTAs, focus areas, operations overview, donation CTA
 - About: organization overview, veteran and volunteer-led network language, credibility note
-- Executive Staff Team: current team cards, functional area labels, and expandable bios pending K9GR verification
-- Our Mission: mission pillars and advocacy framework
+- Team: current executive leadership, executive staff, support role cards, functional area labels, and expandable bios pending K9GR verification
+- Our Mission: focused mission overview and core support areas
 - Global Rescue Operations: hub linking to program areas
-- Korea & Asia: dog meat trade rescue, rehabilitation, transport, advocacy, story placeholders
+- Korea & Asia: dog meat trade rescue, rehabilitation, transport, advocacy, and field video
 - Ukraine: humanitarian aid, animal medical aid, supplies, evacuations, partner support
 - Disaster Relief: emergency response, transport, supplies, partner support
-- Military & International Programs: careful program framing pending review
 - Rescue Stories: story index for Gracie, Apollo and Juno, Jesse, Ukraine, and Korea
 - Volunteer: opportunity overview and official Google Form intake link
 - Donate: donation support areas and link placeholders
@@ -100,7 +103,8 @@ K9GR should review or provide the following before launch:
 - Approved rescue story copy and images for Gracie, Apollo and Juno, Jesse, Ukraine, and Korea
 - Dog Warriors/media claims, review links, event details, and rights-approved media
 - Final public contact details, if K9GR wants emails or phone numbers listed
-- Executive Staff Team bio details, functional area labels, credentials, affiliations, and service-history wording
+- Team bio details, functional area labels, credentials, affiliations, support classifications, and service-history wording
+- Historical Middle East or disease mitigation work should only be added later as a rescue story or update if K9GR provides approved public content.
 
 ## Content Safety Notes
 
