@@ -1,0 +1,58 @@
+---
+import Layout from "../components/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+---
+
+<Layout title="Donate" description="Donate to support K9 Global Rescue work including rescue, medical care, food, shelter, transport, and emergency response.">
+  <Hero
+    eyebrow="Donate"
+    title="Fuel rescue, care, shelter, and transport."
+    text="Donations support rescue operations, medical care, food, shelter, rehabilitation, transport, emergency response, and partner support. Final payment and campaign links must be supplied by K9GR."
+    primaryLabel="GoFundMe Placeholder"
+    primaryHref="#donation-options"
+    secondaryLabel="Volunteer"
+    secondaryHref="/volunteer/"
+  />
+
+  <section class="section" id="donation-options">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Donation options"
+        title="No fake payment forms."
+        text="This page intentionally uses link placeholders so the site does not invent donation processors or collect payment details."
+      />
+      <div class="grid cards">
+        <div class="panel text-panel">
+          <h3>General donation link</h3>
+          <p>Placeholder for K9GR's approved general donation processor.</p>
+          <a class="button light" href="#">Approved URL needed</a>
+        </div>
+        <div class="panel text-panel">
+          <h3>GoFundMe campaign</h3>
+          <p>Placeholder for the active GoFundMe campaign link referenced by the current site.</p>
+          <a class="button light" href="#">GoFundMe URL needed</a>
+        </div>
+        <div class="panel text-panel">
+          <h3>United Airlines Miles on a Mission</h3>
+          <p>Placeholder for the approved Miles on a Mission link or current travel support program.</p>
+          <a class="button light" href="#">Miles link needed</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="What support can fund"
+        title="Rescue work has practical needs."
+      />
+      <ul class="check-list">
+        <li>Rescue, evacuation, emergency shelter, and transport.</li>
+        <li>Veterinary care, vaccination, spay/neuter, and disease mitigation.</li>
+        <li>Food, supplies, rehabilitation, adoption support, and partner coordination.</li>
+      </ul>
+    </div>
+  </section>
+</Layout>

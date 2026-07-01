@@ -1,0 +1,55 @@
+---
+const { title, text, href = "/rescue-stories/", tag = "Content review needed" } = Astro.props;
+---
+
+<article class="story-card">
+  <div class="story-image" aria-hidden="true"></div>
+  <div class="story-copy">
+    <span>{tag}</span>
+    <h3>{title}</h3>
+    <p>{text}</p>
+    <a href={href}>Read story</a>
+  </div>
+</article>
+
+<style>
+  .story-card {
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(23, 42, 58, 0.06);
+  }
+
+  .story-image {
+    min-height: 160px;
+    background:
+      linear-gradient(135deg, rgba(23, 42, 58, 0.82), rgba(71, 107, 90, 0.44)),
+      url("https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=900&q=80");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .story-copy {
+    padding: 1.25rem;
+  }
+
+  .story-copy span {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .story-copy p {
+    color: var(--color-ink-soft);
+  }
+
+  .story-copy a {
+    color: var(--color-accent);
+    font-weight: 900;
+    text-decoration: none;
+  }
+</style>

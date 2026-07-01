@@ -1,0 +1,75 @@
+---
+import Layout from "../components/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import CTASection from "../components/CTASection.astro";
+---
+
+<Layout title="About" description="Learn who K9 Global Rescue is and how its volunteer-led global rescue network supports animals in crisis.">
+  <Hero
+    eyebrow="About K9GR"
+    title="A volunteer-led network for animals without a voice."
+    text="K9 Global Rescue is described on the current site as a United States 501(c)(3) nonpartisan nonprofit and EU registered NGO working worldwide with volunteers and partner organizations."
+    primaryLabel="Our Mission"
+    primaryHref="/mission/"
+    secondaryLabel="Contact"
+    secondaryHref="/contact/"
+  />
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <SectionHeading
+          eyebrow="Who we are"
+          title="Veterans, volunteers, medical professionals, and advocates working through partnerships."
+          text="The current organization story describes former military veterans and volunteers from different countries working with rescue organizations, government and disaster relief agencies, veterinarians, doctors, first responders, and local partners."
+        />
+        <p>
+          This redesign keeps that identity clear while avoiding private staff profiles or
+          internal details. K9GR should review any final public team information before launch.
+        </p>
+      </div>
+      <div class="panel text-panel">
+        <h3>Credibility note</h3>
+        <p>
+          K9 Global Rescue is described as a United States 501(c)(3) nonpartisan nonprofit
+          and EU registered NGO organization. Final legal wording, registration references,
+          and compliance copy should be verified before publication.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Theme"
+        title="We stand as one, for all without a voice."
+        text="The new site uses this central phrase as a unifying message across animal rescue, humanitarian support, disaster response, anti-cruelty advocacy, and volunteer mobilization."
+      />
+      <div class="grid cards">
+        <div class="panel text-panel">
+          <h3>Mission-driven</h3>
+          <p>Focused on urgent needs without resorting to exaggerated claims or unverifiable numbers.</p>
+        </div>
+        <div class="panel text-panel">
+          <h3>Partner-oriented</h3>
+          <p>Clear about coordination with rescue partners, relief agencies, and local networks.</p>
+        </div>
+        <div class="panel text-panel">
+          <h3>Credible for donors</h3>
+          <p>Donation pages explain support areas and leave payment details as approved-link placeholders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Join the work with clarity and care."
+    text="Explore the mission, volunteer pathways, and program pages to understand where K9GR focuses its rescue and relief efforts."
+    primaryLabel="Read the Mission"
+    primaryHref="/mission/"
+    secondaryLabel="Volunteer"
+    secondaryHref="/volunteer/"
+  />
+</Layout>

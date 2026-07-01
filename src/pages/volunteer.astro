@@ -1,0 +1,52 @@
+---
+import Layout from "../components/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import CTASection from "../components/CTASection.astro";
+---
+
+<Layout title="Volunteer" description="Volunteer with K9 Global Rescue through field, logistics, admin, media, transport, and professional support opportunities.">
+  <Hero
+    eyebrow="Volunteer"
+    title="Build the network before the next urgent call."
+    text="K9GR's current volunteer language invites people to share skills, experience, and availability so the organization can match volunteers with current and future operations."
+    primaryLabel="Volunteer Signup"
+    primaryHref="#signup"
+    secondaryLabel="Contact"
+    secondaryHref="/contact/"
+  />
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <SectionHeading
+          eyebrow="Ways to help"
+          title="Many forms of service can support rescue work."
+          text="Final volunteer categories should be reviewed by K9GR based on current operational needs."
+        />
+        <ul class="check-list">
+          <li>Field and logistics support, when appropriate and approved.</li>
+          <li>Transport coordination, animal handling, fostering, and adoption support.</li>
+          <li>Veterinary, medical, first responder, and crisis-response expertise.</li>
+          <li>Administrative, fundraising, media, translation, and event support.</li>
+        </ul>
+      </div>
+      <div class="panel text-panel" id="signup">
+        <h3>Volunteer signup placeholder</h3>
+        <p>
+          Replace this button with the approved Google Form URL before launch. Submitting
+          interest helps K9GR build a volunteer network, but it does not guarantee immediate
+          deployment or placement.
+        </p>
+        <a class="button primary" href="#" aria-disabled="true">Google Form link needed</a>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready volunteers make response easier."
+    text="Use the contact page for volunteer questions until the final signup form is connected."
+    primaryLabel="Contact"
+    primaryHref="/contact/"
+  />
+</Layout>

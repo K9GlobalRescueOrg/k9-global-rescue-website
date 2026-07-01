@@ -1,0 +1,61 @@
+---
+import Layout from "../components/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+---
+
+<Layout title="Contact" description="Contact K9 Global Rescue for general inquiries, volunteer interest, donation questions, and partner inquiries.">
+  <Hero
+    eyebrow="Contact"
+    title="Reach the right inquiry path."
+    text="This contact page uses a Netlify Forms-ready structure without publishing private emails or collecting sensitive information."
+    primaryLabel="Donate"
+    primaryHref="/donate/"
+    secondaryLabel="Volunteer"
+    secondaryHref="/volunteer/"
+  />
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <SectionHeading
+          eyebrow="Contact options"
+          title="General, volunteer, donation, and partner inquiries."
+          text="K9GR can later replace or augment this form with approved public emails, CRM forms, or specific inquiry channels."
+        />
+        <ul class="check-list">
+          <li>General inquiry</li>
+          <li>Volunteer inquiry</li>
+          <li>Donation or campaign question</li>
+          <li>Partner, media, or corporate support inquiry</li>
+        </ul>
+      </div>
+      <form class="panel text-panel form-grid" name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+        <label class="field">
+          Name
+          <input name="name" type="text" autocomplete="name" required />
+        </label>
+        <label class="field">
+          Email
+          <input name="email" type="email" autocomplete="email" required />
+        </label>
+        <label class="field">
+          Inquiry type
+          <select name="inquiry_type" required>
+            <option value="">Select one</option>
+            <option>General inquiry</option>
+            <option>Volunteer inquiry</option>
+            <option>Donation or partner inquiry</option>
+            <option>Media inquiry</option>
+          </select>
+        </label>
+        <label class="field">
+          Message
+          <textarea name="message" required></textarea>
+        </label>
+        <button class="button primary" type="submit">Send inquiry</button>
+      </form>
+    </div>
+  </section>
+</Layout>

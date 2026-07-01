@@ -1,0 +1,58 @@
+---
+import Layout from "../components/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import { getCollection } from "astro:content";
+
+const news = await getCollection("news");
+---
+
+<Layout title="Media / News" description="K9 Global Rescue media, news, Dog Warriors feature, YouTube channel placeholder, and updates.">
+  <Hero
+    eyebrow="Media / News"
+    title="A clearer home for films, videos, and field updates."
+    text="The current site highlights Dog Warriors, YouTube content, event promotion, and media reviews. This page creates a more organized structure for current and future updates."
+    primaryLabel="Contact"
+    primaryHref="/contact/"
+    secondaryLabel="Rescue Stories"
+    secondaryHref="/rescue-stories/"
+  />
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <SectionHeading
+          eyebrow="Media feature"
+          title="Dog Warriors"
+          text="Placeholder section for Dog Warriors coverage, award mentions, review links, and approved film/event language. All claims and media rights should be verified before launch."
+        />
+      </div>
+      <div class="panel text-panel">
+        <h3>YouTube channel</h3>
+        <p>
+          Placeholder for the approved YouTube channel link, trailer embed, and future video
+          updates. Avoid embedding videos until K9GR confirms the exact channel and rights.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Updates"
+        title="Markdown news collection ready for future posts."
+        text="Draft posts can live in src/content/news and be promoted when reviewed."
+      />
+      <div class="grid cards">
+        {news.map((item) => (
+          <article class="panel text-panel">
+            <p class="eyebrow">{item.data.draft ? "Draft" : "News"}</p>
+            <h3>{item.data.title}</h3>
+            <p>{item.data.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

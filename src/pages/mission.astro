@@ -1,0 +1,42 @@
+---
+import Layout from "../components/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ProgramCard from "../components/ProgramCard.astro";
+
+const pillars = [
+  ["Global animal rescue", "Local, national, and international rescue operations for animals in urgent need."],
+  ["Disaster relief", "Emergency support through supplies, transport, partner coordination, and crisis response."],
+  ["Ending cruelty and dog meat trade", "Advocacy and rescue work focused on dogs harmed by cruelty, slaughter, and illegal trade."],
+  ["Medical care and disease mitigation", "Health services including veterinary care, vaccination, spay/neuter, and population health support."],
+  ["Transport and adoption support", "Domestic and international transport to help rescued animals reach safety and approved homes."],
+  ["Military and international programs", "Careful cooperation with military-connected volunteers, service members, and international partners."],
+  ["Sanctuary and rehabilitation", "Support for safe places where abused, disabled, older, or traumatized animals can recover."],
+  ["Wildlife trafficking advocacy", "Advocacy against wildlife trafficking and poaching, pending final program detail review."]
+];
+---
+
+<Layout title="Our Mission" description="K9 Global Rescue mission pillars for rescue, relief, medical care, transport, sanctuary support, and advocacy.">
+  <Hero
+    eyebrow="Our Mission"
+    title="Compassion in action, organized around the animals who need it most."
+    text="K9GR's mission is to safeguard and enhance the lives of animals in need through rescue operations, rehabilitation, proactive advocacy, and a global network of skilled volunteers and partners."
+    primaryLabel="Global Operations"
+    primaryHref="/operations/"
+    secondaryLabel="Donate"
+    secondaryHref="/donate/"
+  />
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Mission pillars"
+        title="A clearer framework for the work."
+        text="These pillars rework the current site's mission statement into scannable areas of action. Final wording should be approved by K9GR leadership before launch."
+      />
+      <div class="grid cards">
+        {pillars.map(([title, text]) => <ProgramCard title={title} text={text} href="/operations/" label="View operations" />)}
+      </div>
+    </div>
+  </section>
+</Layout>

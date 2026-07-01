@@ -1,0 +1,48 @@
+---
+const { title, text, primaryLabel = "Donate", primaryHref = "/donate/", secondaryLabel, secondaryHref } = Astro.props;
+---
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <p class="eyebrow">Support rescue work</p>
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </div>
+    <div class="button-row">
+      <a class="button primary" href={primaryHref}>{primaryLabel}</a>
+      {secondaryLabel && <a class="button secondary" href={secondaryHref}>{secondaryLabel}</a>}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-band {
+    background: var(--color-ink);
+    color: #fff;
+    padding: 64px 0;
+  }
+
+  .cta-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .cta-band .eyebrow {
+    color: var(--color-gold);
+  }
+
+  .cta-band p {
+    max-width: 760px;
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  @media (max-width: 760px) {
+    .cta-inner {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

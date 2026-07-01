@@ -1,0 +1,82 @@
+---
+const {
+  eyebrow,
+  title,
+  text,
+  primaryLabel,
+  primaryHref,
+  secondaryLabel,
+  secondaryHref,
+  tertiaryLabel,
+  tertiaryHref,
+  variant = "default"
+} = Astro.props;
+---
+
+<section class={`hero ${variant}`}>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{title}</h1>
+      {text && <p class="lead">{text}</p>}
+      <div class="button-row">
+        {primaryLabel && <a class="button primary" href={primaryHref}>{primaryLabel}</a>}
+        {secondaryLabel && <a class="button secondary" href={secondaryHref}>{secondaryLabel}</a>}
+        {tertiaryLabel && <a class="button secondary" href={tertiaryHref}>{tertiaryLabel}</a>}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 660px;
+    display: grid;
+    align-items: end;
+    overflow: hidden;
+    background:
+      linear-gradient(90deg, rgba(23, 42, 58, 0.94) 0%, rgba(23, 42, 58, 0.74) 47%, rgba(23, 42, 58, 0.28) 100%),
+      url("https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1800&q=80");
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+  }
+
+  .hero.operations {
+    background:
+      linear-gradient(90deg, rgba(23, 42, 58, 0.94), rgba(23, 42, 58, 0.48)),
+      url("https://images.unsplash.com/photo-1601758174114-e711c0cbaa69?auto=format&fit=crop&w=1800&q=80");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .hero-inner {
+    padding: 118px 0 96px;
+  }
+
+  .hero-copy {
+    max-width: 780px;
+  }
+
+  .hero .lead {
+    max-width: 720px;
+    margin: 1.35rem 0 1.8rem;
+    color: rgba(255, 255, 255, 0.86);
+  }
+
+  .hero .eyebrow {
+    color: var(--color-gold);
+  }
+
+  @media (max-width: 820px) {
+    .hero {
+      min-height: 600px;
+      background-position: 63% center;
+    }
+
+    .hero-inner {
+      padding: 90px 0 58px;
+    }
+  }
+</style>

@@ -1,0 +1,165 @@
+---
+const navItems = [
+  { label: "About", href: "/about/" },
+  { label: "Mission", href: "/mission/" },
+  { label: "Operations", href: "/operations/" },
+  { label: "Stories", href: "/rescue-stories/" },
+  { label: "Volunteer", href: "/volunteer/" },
+  { label: "Media", href: "/media/" }
+];
+---
+
+<header class="site-header">
+  <div class="topline">
+    <div class="container">United States 501(c)(3) nonpartisan nonprofit and EU registered NGO</div>
+  </div>
+  <nav class="nav container" aria-label="Primary navigation">
+    <a class="brand" href="/" aria-label="K9 Global Rescue home">
+      <span class="brand-mark">K9</span>
+      <span>
+        <strong>K9 Global Rescue</strong>
+        <small>For all without a voice</small>
+      </span>
+    </a>
+    <input class="nav-toggle" id="nav-toggle" type="checkbox" aria-label="Toggle navigation" />
+    <label class="nav-toggle-label" for="nav-toggle"><span></span><span></span><span></span></label>
+    <div class="nav-links">
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      <a href="/donate/" class="nav-donate">Donate</a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(16px);
+  }
+
+  .topline {
+    background: var(--color-ink);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .topline .container {
+    padding: 0.45rem 0;
+  }
+
+  .nav {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .brand-mark {
+    display: inline-grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border-radius: var(--radius);
+    background: var(--color-ink);
+    color: var(--color-gold);
+    font-weight: 900;
+  }
+
+  .brand strong,
+  .brand small {
+    display: block;
+  }
+
+  .brand small {
+    color: var(--color-ink-soft);
+    font-size: 0.78rem;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .nav-links a {
+    border-radius: var(--radius);
+    padding: 0.6rem 0.7rem;
+    color: var(--color-ink-soft);
+    font-size: 0.94rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .nav-links a:hover {
+    background: var(--color-surface-alt);
+    color: var(--color-ink);
+  }
+
+  .nav-links .nav-donate {
+    margin-left: 0.25rem;
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .nav-toggle,
+  .nav-toggle-label {
+    display: none;
+  }
+
+  @media (max-width: 940px) {
+    .nav {
+      min-height: 70px;
+    }
+
+    .nav-toggle-label {
+      display: inline-grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+    }
+
+    .nav-toggle-label span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--color-ink);
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      display: none;
+      padding: 0.8rem 1rem 1rem;
+      border-bottom: 1px solid var(--color-border);
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 0.85rem;
+    }
+
+    .nav-toggle:checked ~ .nav-links {
+      display: grid;
+    }
+  }
+</style>

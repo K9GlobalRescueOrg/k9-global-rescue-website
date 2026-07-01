@@ -1,0 +1,135 @@
+---
+import Layout from "../components/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ProgramCard from "../components/ProgramCard.astro";
+import StoryCard from "../components/StoryCard.astro";
+import CTASection from "../components/CTASection.astro";
+
+const programs = [
+  {
+    title: "Korea & Asia",
+    text: "Rescue, rehabilitation, transport, and advocacy connected to the dog meat trade and animals facing severe cruelty.",
+    href: "/korea-asia/"
+  },
+  {
+    title: "Ukraine",
+    text: "Humanitarian and animal rescue support for people, pets, shelters, and partners affected by war and displacement.",
+    href: "/ukraine/"
+  },
+  {
+    title: "Disaster Relief",
+    text: "Emergency response support through supplies, transport, partner coordination, and crisis deployments.",
+    href: "/disaster-relief/"
+  },
+  {
+    title: "Rescue Stories",
+    text: "A growing home for stories such as Gracie, Apollo and Juno, Jesse, and Ukraine and Korea rescues.",
+    href: "/rescue-stories/"
+  },
+  {
+    title: "Volunteer Network",
+    text: "A global group of volunteers, veterans, first responders, medical professionals, and advocates ready to help.",
+    href: "/volunteer/"
+  }
+];
+---
+
+<Layout
+  title="K9 Global Rescue"
+  description="K9 Global Rescue is a mission-driven nonprofit working globally for animals in crisis through rescue, relief, transport, medical care, and advocacy."
+>
+  <Hero
+    eyebrow="United States 501(c)(3) nonprofit and EU registered NGO"
+    title="Global rescue for animals in crisis."
+    text="K9 Global Rescue works with volunteers and partners around the world to help dogs and other animals without a voice through rescue operations, relief support, medical care, transport, rehabilitation, and advocacy."
+    primaryLabel="Donate"
+    primaryHref="/donate/"
+    secondaryLabel="Volunteer"
+    secondaryHref="/volunteer/"
+    tertiaryLabel="Learn About Our Work"
+    tertiaryHref="/operations/"
+  />
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Mission</p>
+        <h2>We stand as one, for all without a voice.</h2>
+      </div>
+      <p class="lead">
+        The redesigned site keeps K9GR's urgent mission while making it easier for donors,
+        volunteers, partners, and media to understand the work: global animal rescue,
+        disaster relief, anti-cruelty advocacy, medical care, transport, adoption support,
+        and international cooperation.
+      </p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Focus areas"
+        title="Rescue work organized around clear paths to help."
+        text="Each area below is based on the current site structure and should be reviewed by K9GR before launch for final photos, dates, and active campaign links."
+      />
+      <div class="grid cards">
+        {programs.map((program) => <ProgramCard {...program} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="visual-block"></div>
+      <div>
+        <SectionHeading
+          eyebrow="Global operations"
+          title="Rescue, relief, and coordination across borders."
+          text="K9GR's current site describes work with rescue organizations, government and disaster relief agencies, military-connected volunteers, veterinarians, doctors, first responders, and local partners. This redesign presents that work without overstating active capacity or creating unverified claims."
+        />
+        <ul class="check-list">
+          <li>Emergency supplies, food, shelter support, and transport coordination.</li>
+          <li>Medical care, vaccination, spay/neuter, rehabilitation, and disease mitigation.</li>
+          <li>Advocacy against cruelty, including the dog meat trade and wildlife trafficking.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Featured story"
+        title="Gracie's story will anchor the rescue story library."
+        text="The current website features Gracie, Apollo and Juno, Jesse, and regional rescue galleries. Final story text, images, and timeline details should be reviewed before launch."
+      />
+      <div class="grid cards">
+        <StoryCard
+          title="Gracie"
+          text="Placeholder summary for Gracie's survival and recovery story from South Korea. Needs final approved narrative and images."
+          href="/rescue-stories/"
+        />
+        <StoryCard
+          title="Apollo & Juno"
+          text="Placeholder summary for Apollo and Juno's rescue journey. Needs final approved timeline, photos, and outcome."
+          href="/rescue-stories/"
+        />
+        <StoryCard
+          title="Ukraine rescue stories"
+          text="Placeholder area for rescue stories from Ukraine, including animals evacuated or supported by partner work."
+          href="/rescue-stories/"
+        />
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Help keep rescue operations moving."
+    text="Donations support rescue, medical care, food, shelter, transport, emergency response, and partner support. Final donation processors and campaign links are placeholders until K9GR provides approved URLs."
+    primaryLabel="Donate"
+    primaryHref="/donate/"
+    secondaryLabel="Volunteer"
+    secondaryHref="/volunteer/"
+  />
+</Layout>

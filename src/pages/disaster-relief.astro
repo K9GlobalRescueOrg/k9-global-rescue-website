@@ -1,0 +1,41 @@
+---
+import Layout from "../components/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import CTASection from "../components/CTASection.astro";
+---
+
+<Layout title="Disaster Relief" description="K9 Global Rescue disaster relief page for emergency response, transport, supplies, partner support, and crisis deployments.">
+  <Hero
+    eyebrow="Disaster Relief"
+    title="Emergency support when animals and communities are in crisis."
+    text="K9GR's disaster relief language is reframed here around credible action: response coordination, supplies, transport, partner support, and careful crisis deployment."
+    primaryLabel="Donate"
+    primaryHref="/donate/"
+    secondaryLabel="Contact"
+    secondaryHref="/contact/"
+  />
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Response areas"
+        title="Practical relief support."
+        text="The page avoids promising response capacity that has not been confirmed and instead explains the support areas donors and partners can understand."
+      />
+      <div class="grid cards">
+        <div class="panel text-panel"><h3>Emergency response</h3><p>Support for urgent animal rescue needs during disasters and crisis events.</p></div>
+        <div class="panel text-panel"><h3>Transport</h3><p>Help moving animals, supplies, and relief resources through approved rescue channels.</p></div>
+        <div class="panel text-panel"><h3>Supplies</h3><p>Food, medical supplies, shelter materials, and other essentials as operations require.</p></div>
+        <div class="panel text-panel"><h3>Partner support</h3><p>Coordination with local rescue organizations, clinics, shelters, and relief agencies.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Preparedness depends on people ready to help."
+    text="Support emergency response work through donations, volunteer interest, and partner inquiries."
+    secondaryLabel="Volunteer"
+    secondaryHref="/volunteer/"
+  />
+</Layout>

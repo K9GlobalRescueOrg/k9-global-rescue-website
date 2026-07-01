@@ -1,0 +1,39 @@
+---
+import Layout from "../components/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import StoryCard from "../components/StoryCard.astro";
+
+const stories = [
+  ["Gracie", "Placeholder summary for Gracie's story from South Korea. Needs approved narrative, photos, and timeline."],
+  ["Apollo & Juno", "Placeholder for Apollo and Juno's rescue journey and outcome. Needs content review."],
+  ["Jesse", "Placeholder for Jesse's life and rescue story. Needs final approved copy and media."],
+  ["Ukraine rescue stories", "Placeholder for stories of animals supported, evacuated, or treated through Ukraine relief work."],
+  ["Korea rescue stories", "Placeholder for dogs rescued from the dog meat trade, farm closures, and rehabilitation work."]
+];
+---
+
+<Layout title="Rescue Stories" description="K9 Global Rescue story index for Gracie, Apollo and Juno, Jesse, Ukraine rescue stories, and Korea rescue stories.">
+  <Hero
+    eyebrow="Rescue Stories"
+    title="Individual lives at the center of the mission."
+    text="The old site contains many moving project and rescue story pages. This new index gives those stories a clean home while marking summaries for review before launch."
+    primaryLabel="Donate"
+    primaryHref="/donate/"
+    secondaryLabel="Korea & Asia"
+    secondaryHref="/korea-asia/"
+  />
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Story library"
+        title="Prepared for approved rescue narratives."
+        text="These cards should be replaced with reviewed story summaries, final images, and any approved adoption or outcome details."
+      />
+      <div class="grid cards">
+        {stories.map(([title, text]) => <StoryCard title={title} text={text} />)}
+      </div>
+    </div>
+  </section>
+</Layout>

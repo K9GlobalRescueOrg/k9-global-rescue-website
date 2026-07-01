@@ -1,0 +1,40 @@
+---
+import Layout from "../components/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ProgramCard from "../components/ProgramCard.astro";
+
+const ops = [
+  { title: "Korea & Asia", text: "Dog meat trade rescue, farm closures, rehabilitation, transport, adoption support, and advocacy.", href: "/korea-asia/" },
+  { title: "Ukraine", text: "Humanitarian aid, animal medical aid, pet food and supplies, evacuations, and partner support.", href: "/ukraine/" },
+  { title: "Middle East", text: "Placeholder overview for Middle East rescue work, pending final partner and program review.", href: "/middle-east/" },
+  { title: "Disaster Relief", text: "Emergency response, supplies, transport, crisis deployments, and rescue partner support.", href: "/disaster-relief/" },
+  { title: "Military Programs", text: "Military-connected volunteers, international cooperation, disease mitigation, and retired working dog support.", href: "/military-international-programs/" }
+];
+---
+
+<Layout title="Global Rescue Operations" description="Overview of K9 Global Rescue international rescue work and program areas.">
+  <Hero
+    variant="operations"
+    eyebrow="Global Rescue Operations"
+    title="International rescue work made easier to understand."
+    text="K9GR's current site spans Asia, Ukraine, disaster relief, the Middle East, and military-connected international programs. This page creates a clean overview with clear next steps."
+    primaryLabel="Donate"
+    primaryHref="/donate/"
+    secondaryLabel="Volunteer"
+    secondaryHref="/volunteer/"
+  />
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Program map"
+        title="Where the mission is focused."
+        text="Each program page should receive final approved images, active partner references, and reviewed campaign links before launch."
+      />
+      <div class="grid cards">
+        {ops.map((op) => <ProgramCard {...op} />)}
+      </div>
+    </div>
+  </section>
+</Layout>
