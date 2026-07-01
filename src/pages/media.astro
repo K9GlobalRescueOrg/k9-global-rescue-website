@@ -7,11 +7,11 @@ import { getCollection } from "astro:content";
 const news = await getCollection("news");
 ---
 
-<Layout title="Media / News" description="K9 Global Rescue media, news, Dog Warriors feature, YouTube channel placeholder, and updates.">
+<Layout title="Media / News" description="K9 Global Rescue media, news, Dog Warriors features, field updates, rescue stories, and video content.">
   <Hero
     eyebrow="Media / News"
-    title="A clearer home for films, videos, and field updates."
-    text="The current site highlights Dog Warriors, YouTube content, event promotion, and media reviews. This page creates a more organized structure for current and future updates."
+    title="A Clearer Home For Films, Videos, And Field Updates."
+    text="Follow K9 Global Rescue’s field updates, rescue stories, and media features."
     primaryLabel="Contact"
     primaryHref="/contact/"
     secondaryLabel="Rescue Stories"
@@ -24,15 +24,12 @@ const news = await getCollection("news");
         <SectionHeading
           eyebrow="Media feature"
           title="Dog Warriors"
-          text="Placeholder section for Dog Warriors coverage, award mentions, review links, and approved film/event language. All claims and media rights should be verified before launch."
+          text="Dog Warriors media features connect viewers with rescue work, field documentation, and the people behind the mission."
         />
       </div>
       <div class="panel text-panel">
-        <h3>YouTube channel</h3>
-        <p>
-          Placeholder for the approved YouTube channel link, trailer embed, and future video
-          updates. Avoid embedding videos until K9GR confirms the exact channel and rights.
-        </p>
+        <h3>YouTube Channel</h3>
+        <p>Video updates and field media can be shared here as new public content becomes available.</p>
       </div>
     </div>
   </section>
@@ -41,13 +38,13 @@ const news = await getCollection("news");
     <div class="container">
       <SectionHeading
         eyebrow="Updates"
-        title="Markdown news collection ready for future posts."
-        text="Draft posts can live in src/content/news and be promoted when reviewed."
+        title="Field Updates And News."
+        text="Follow rescue stories, media features, and organization updates."
       />
       <div class="grid cards">
         {news.map((item) => (
           <article class="panel text-panel">
-            <p class="eyebrow">{item.data.draft ? "Draft" : "News"}</p>
+            <p class="eyebrow">News</p>
             <h3>{item.data.title}</h3>
             <p>{item.data.description}</p>
           </article>

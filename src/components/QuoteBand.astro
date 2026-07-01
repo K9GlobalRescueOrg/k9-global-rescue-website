@@ -1,0 +1,86 @@
+---
+interface Props {
+  eyebrow?: string;
+  support?: string;
+  compact?: boolean;
+}
+
+const {
+  eyebrow = "Core belief",
+  support,
+  compact = false
+} = Astro.props;
+---
+
+<section class:list={["quote-band", { compact }]}>
+  <div class="container">
+    <div class="quote-band__inner">
+      <p class="eyebrow">{eyebrow}</p>
+      <blockquote>
+        "Saving one dog will not change the world, but for that one dog the world will change forever."
+      </blockquote>
+      {support && <p class="quote-band__support">{support}</p>}
+    </div>
+  </div>
+</section>
+
+<style>
+  .quote-band {
+    background:
+      linear-gradient(135deg, rgba(232, 180, 72, 0.18), rgba(5, 6, 4, 0.24) 42%, rgba(0, 0, 0, 0.95)),
+      var(--color-black);
+    border-block: 1px solid rgba(232, 180, 72, 0.28);
+    color: var(--color-ivory);
+    padding-block: clamp(4.5rem, 8vw, 7rem);
+  }
+
+  .quote-band.compact {
+    padding-block: clamp(3.25rem, 6vw, 5rem);
+  }
+
+  .quote-band__inner {
+    border-left: 5px solid var(--color-gold);
+    max-width: 1040px;
+    padding-left: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  .quote-band .eyebrow {
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+  }
+
+  .quote-band blockquote {
+    color: var(--color-ivory);
+    font-family: var(--font-display);
+    font-size: clamp(2.15rem, 6vw, 5rem);
+    font-weight: 950;
+    letter-spacing: 0;
+    line-height: 0.98;
+    margin: 0;
+    max-width: 980px;
+    text-transform: none;
+  }
+
+  .quote-band.compact blockquote {
+    font-size: clamp(1.75rem, 4.2vw, 3.35rem);
+    line-height: 1.04;
+  }
+
+  .quote-band__support {
+    color: rgba(245, 233, 208, 0.86);
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    line-height: 1.55;
+    margin: 1.2rem 0 0;
+    max-width: 720px;
+  }
+
+  @media (max-width: 720px) {
+    .quote-band {
+      padding-block: 3.5rem;
+    }
+
+    .quote-band__inner {
+      border-left-width: 4px;
+    }
+  }
+</style>

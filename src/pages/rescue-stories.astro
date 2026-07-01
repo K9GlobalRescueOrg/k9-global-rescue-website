@@ -5,19 +5,19 @@ import SectionHeading from "../components/SectionHeading.astro";
 import StoryCard from "../components/StoryCard.astro";
 
 const stories = [
-  ["Gracie", "Placeholder summary for Gracie's story from South Korea. Needs approved narrative, photos, and timeline."],
-  ["Apollo & Juno", "Placeholder for Apollo and Juno's rescue journey and outcome. Needs content review."],
-  ["Jesse", "Placeholder for Jesse's life and rescue story. Needs final approved copy and media."],
-  ["Ukraine rescue stories", "Placeholder for stories of animals supported, evacuated, or treated through Ukraine relief work."],
-  ["Korea rescue stories", "Placeholder for dogs rescued from the dog meat trade, farm closures, and rehabilitation work."]
+  ["Gracie", "A featured rescue story from the Korea and Asia program area."],
+  ["Apollo & Juno", "A rescue journey connected to care, transport, and recovery."],
+  ["Jesse", "A story centered on survival, rehabilitation, and safety."],
+  ["Ukraine Rescue Stories", "Field updates and rescue stories connected to Ukraine support."],
+  ["Korea Rescue Stories", "Stories and images from rescue work in Korea and Asia."]
 ];
 ---
 
 <Layout title="Rescue Stories" description="K9 Global Rescue story index for Gracie, Apollo and Juno, Jesse, Ukraine rescue stories, and Korea rescue stories.">
   <Hero
     eyebrow="Rescue Stories"
-    title="Individual lives at the center of the mission."
-    text="The old site contains many moving project and rescue story pages. This new index gives those stories a clean home while marking summaries for review before launch."
+    title="Individual Lives At The Center Of The Mission."
+    text="Rescue stories will be shared as public updates become available."
     primaryLabel="Donate"
     primaryHref="/donate/"
     secondaryLabel="Korea & Asia"
@@ -28,8 +28,8 @@ const stories = [
     <div class="container">
       <SectionHeading
         eyebrow="Story library"
-        title="Prepared for approved rescue narratives."
-        text="These cards should be replaced with reviewed story summaries, final images, and any approved adoption or outcome details."
+        title="Stories From The Work."
+        text="Follow individual rescue journeys, recovery updates, and regional field stories."
       />
       <div class="grid cards">
         {stories.map(([title, text]) => <StoryCard title={title} text={text} />)}

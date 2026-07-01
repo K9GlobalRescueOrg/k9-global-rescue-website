@@ -5,10 +5,16 @@ const {
   text,
   primaryLabel,
   primaryHref,
+  primaryTarget,
+  primaryRel,
   secondaryLabel,
   secondaryHref,
+  secondaryTarget,
+  secondaryRel,
   tertiaryLabel,
   tertiaryHref,
+  tertiaryTarget,
+  tertiaryRel,
   variant = "default"
 } = Astro.props;
 ---
@@ -20,9 +26,9 @@ const {
       <h1>{title}</h1>
       {text && <p class="lead">{text}</p>}
       <div class="button-row">
-        {primaryLabel && <a class="button primary" href={primaryHref}>{primaryLabel}</a>}
-        {secondaryLabel && <a class="button secondary" href={secondaryHref}>{secondaryLabel}</a>}
-        {tertiaryLabel && <a class="button secondary" href={tertiaryHref}>{tertiaryLabel}</a>}
+        {primaryLabel && <a class="button primary" href={primaryHref} target={primaryTarget} rel={primaryRel}>{primaryLabel}</a>}
+        {secondaryLabel && <a class="button secondary" href={secondaryHref} target={secondaryTarget} rel={secondaryRel}>{secondaryLabel}</a>}
+        {tertiaryLabel && <a class="button secondary" href={tertiaryHref} target={tertiaryTarget} rel={tertiaryRel}>{tertiaryLabel}</a>}
       </div>
     </div>
   </div>
@@ -31,37 +37,67 @@ const {
 <style>
   .hero {
     position: relative;
-    min-height: 660px;
+    min-height: 610px;
     display: grid;
     align-items: end;
     overflow: hidden;
     background:
-      linear-gradient(90deg, rgba(23, 42, 58, 0.94) 0%, rgba(23, 42, 58, 0.74) 47%, rgba(23, 42, 58, 0.28) 100%),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.84) 45%, rgba(0, 0, 0, 0.5) 100%),
+      linear-gradient(135deg, rgba(232, 180, 72, 0.16), transparent 34%),
       url("https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1800&q=80");
     background-position: center;
     background-size: cover;
-    color: #fff;
+    color: var(--color-ivory);
+    isolation: isolate;
   }
 
   .hero.operations {
     background:
-      linear-gradient(90deg, rgba(23, 42, 58, 0.94), rgba(23, 42, 58, 0.48)),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.54)),
+      linear-gradient(135deg, rgba(232, 180, 72, 0.14), transparent 34%),
       url("https://images.unsplash.com/photo-1601758174114-e711c0cbaa69?auto=format&fit=crop&w=1800&q=80");
     background-position: center;
     background-size: cover;
   }
 
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(90deg, rgba(232, 180, 72, 0.09) 1px, transparent 1px),
+      linear-gradient(rgba(232, 180, 72, 0.08) 1px, transparent 1px);
+    background-size: 70px 70px;
+    mask-image: linear-gradient(90deg, #000 0%, transparent 72%);
+  }
+
+  .hero::after {
+    content: "K9";
+    position: absolute;
+    right: clamp(-2rem, 2vw, 4rem);
+    bottom: -0.2em;
+    z-index: -1;
+    color: rgba(232, 180, 72, 0.08);
+    font-size: clamp(13rem, 33vw, 30rem);
+    font-weight: 950;
+    line-height: 0.8;
+    letter-spacing: 0;
+  }
+
   .hero-inner {
-    padding: 118px 0 96px;
+    padding: 104px 0 82px;
   }
 
   .hero-copy {
     max-width: 780px;
+    border-left: 5px solid var(--color-gold);
+    padding-left: clamp(1rem, 2vw, 1.6rem);
   }
 
   .hero .lead {
-    max-width: 720px;
-    margin: 1.35rem 0 1.8rem;
+    max-width: 670px;
+    margin: 1.2rem 0 1.65rem;
     color: rgba(255, 255, 255, 0.86);
   }
 

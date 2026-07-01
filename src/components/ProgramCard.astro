@@ -12,29 +12,38 @@ const { title, text, href, label = "Learn more" } = Astro.props;
 
 <style>
   .program-card {
-    min-height: 245px;
+    min-height: 190px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1.4rem;
+    gap: 1.1rem;
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     padding: 1.25rem;
-    background: #fff;
-    box-shadow: 0 10px 24px rgba(23, 42, 58, 0.06);
+    background:
+      linear-gradient(145deg, rgba(232, 180, 72, 0.1), rgba(232, 180, 72, 0.02)),
+      #090a07;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
+    color: var(--color-ivory);
   }
 
   .program-card h3 {
     margin-bottom: 0.65rem;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
 
   .program-card p {
     color: var(--color-ink-soft);
+    margin-bottom: 0;
   }
 
   .program-card a {
     color: var(--color-accent);
     font-weight: 900;
     text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
 </style>

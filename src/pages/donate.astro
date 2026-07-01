@@ -2,41 +2,48 @@
 import Layout from "../components/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
+import QuoteBand from "../components/QuoteBand.astro";
 ---
 
 <Layout title="Donate" description="Donate to support K9 Global Rescue work including rescue, medical care, food, shelter, transport, and emergency response.">
   <Hero
     eyebrow="Donate"
-    title="Fuel rescue, care, shelter, and transport."
-    text="Donations support rescue operations, medical care, food, shelter, rehabilitation, transport, emergency response, and partner support. Final payment and campaign links must be supplied by K9GR."
-    primaryLabel="GoFundMe Placeholder"
+    title="Fuel Rescue, Care, Shelter, And Transport."
+    text="Donations can support rescue, medical care, food, shelter, transport, emergency response, and partner work."
+    primaryLabel="Ways to Give"
     primaryHref="#donation-options"
     secondaryLabel="Volunteer"
     secondaryHref="/volunteer/"
+  />
+
+  <QuoteBand
+    eyebrow="Why giving matters"
+    support="Donations help fund rescue, transport, medical care, food, shelter, and safe placement."
+    compact
   />
 
   <section class="section" id="donation-options">
     <div class="container">
       <SectionHeading
         eyebrow="Donation options"
-        title="No fake payment forms."
-        text="This page intentionally uses link placeholders so the site does not invent donation processors or collect payment details."
+        title="Ways To Support Rescue Work."
+        text="For current donation information, contact the K9 Global Rescue team."
       />
       <div class="grid cards">
         <div class="panel text-panel">
-          <h3>General donation link</h3>
-          <p>Placeholder for K9GR's approved general donation processor.</p>
-          <a class="button light" href="#">Approved URL needed</a>
+          <h3>General Giving</h3>
+          <p>Support rescue operations, medical care, food, shelter, transport, and emergency response.</p>
+          <a class="button light" href="/contact/">Contact About Giving</a>
         </div>
         <div class="panel text-panel">
-          <h3>GoFundMe campaign</h3>
-          <p>Placeholder for the active GoFundMe campaign link referenced by the current site.</p>
-          <a class="button light" href="#">GoFundMe URL needed</a>
+          <h3>GoFundMe Campaign</h3>
+          <p>Campaign support can help urgent rescue, medical, and transport needs.</p>
+          <a class="button light" href="/contact/">Ask About Current Campaigns</a>
         </div>
         <div class="panel text-panel">
-          <h3>United Airlines Miles on a Mission</h3>
-          <p>Placeholder for the approved Miles on a Mission link or current travel support program.</p>
-          <a class="button light" href="#">Miles link needed</a>
+          <h3>United Airlines Miles On A Mission</h3>
+          <p>Travel support can help rescued animals move toward care and safety.</p>
+          <a class="button light" href="/contact/">Ask About Travel Support</a>
         </div>
       </div>
     </div>
@@ -46,12 +53,12 @@ import SectionHeading from "../components/SectionHeading.astro";
     <div class="container">
       <SectionHeading
         eyebrow="What support can fund"
-        title="Rescue work has practical needs."
+        title="Rescue Work Has Practical Needs."
       />
       <ul class="check-list">
-        <li>Rescue, evacuation, emergency shelter, and transport.</li>
+        <li>Rescue, evacuation, shelter, and transport.</li>
         <li>Veterinary care, vaccination, spay/neuter, and disease mitigation.</li>
-        <li>Food, supplies, rehabilitation, adoption support, and partner coordination.</li>
+        <li>Food, supplies, rehabilitation, adoption support, and partners.</li>
       </ul>
     </div>
   </section>

@@ -1,5 +1,16 @@
 ---
-const { title, text, primaryLabel = "Donate", primaryHref = "/donate/", secondaryLabel, secondaryHref } = Astro.props;
+const {
+  title,
+  text,
+  primaryLabel = "Donate",
+  primaryHref = "/donate/",
+  primaryTarget,
+  primaryRel,
+  secondaryLabel,
+  secondaryHref,
+  secondaryTarget,
+  secondaryRel
+} = Astro.props;
 ---
 
 <section class="cta-band">
@@ -10,17 +21,21 @@ const { title, text, primaryLabel = "Donate", primaryHref = "/donate/", secondar
       <p>{text}</p>
     </div>
     <div class="button-row">
-      <a class="button primary" href={primaryHref}>{primaryLabel}</a>
-      {secondaryLabel && <a class="button secondary" href={secondaryHref}>{secondaryLabel}</a>}
+      <a class="button primary" href={primaryHref} target={primaryTarget} rel={primaryRel}>{primaryLabel}</a>
+      {secondaryLabel && <a class="button secondary" href={secondaryHref} target={secondaryTarget} rel={secondaryRel}>{secondaryLabel}</a>}
     </div>
   </div>
 </section>
 
 <style>
   .cta-band {
-    background: var(--color-ink);
-    color: #fff;
-    padding: 64px 0;
+    background:
+      linear-gradient(135deg, rgba(232, 180, 72, 0.18), transparent 38%),
+      var(--color-black);
+    color: var(--color-ivory);
+    padding: 54px 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .cta-inner {
@@ -35,9 +50,9 @@ const { title, text, primaryLabel = "Donate", primaryHref = "/donate/", secondar
   }
 
   .cta-band p {
-    max-width: 760px;
+    max-width: 620px;
     margin-top: 1rem;
-    color: rgba(255, 255, 255, 0.78);
+    color: var(--color-ink-soft);
   }
 
   @media (max-width: 760px) {

@@ -5,33 +5,41 @@ import SectionHeading from "../components/SectionHeading.astro";
 import ProgramCard from "../components/ProgramCard.astro";
 import StoryCard from "../components/StoryCard.astro";
 import CTASection from "../components/CTASection.astro";
+import QuoteBand from "../components/QuoteBand.astro";
 
 const programs = [
   {
     title: "Korea & Asia",
-    text: "Rescue, rehabilitation, transport, and advocacy connected to the dog meat trade and animals facing severe cruelty.",
+    text: "Dog meat trade rescue, rehabilitation, transport, and advocacy.",
     href: "/korea-asia/"
   },
   {
     title: "Ukraine",
-    text: "Humanitarian and animal rescue support for people, pets, shelters, and partners affected by war and displacement.",
+    text: "Humanitarian aid, animal medical support, supplies, and evacuations.",
     href: "/ukraine/"
   },
   {
     title: "Disaster Relief",
-    text: "Emergency response support through supplies, transport, partner coordination, and crisis deployments.",
+    text: "Emergency supplies, transport, partner coordination, and response support.",
     href: "/disaster-relief/"
   },
   {
     title: "Rescue Stories",
-    text: "A growing home for stories such as Gracie, Apollo and Juno, Jesse, and Ukraine and Korea rescues.",
+    text: "Rescue stories, project updates, and recovery journeys.",
     href: "/rescue-stories/"
   },
   {
     title: "Volunteer Network",
-    text: "A global group of volunteers, veterans, first responders, medical professionals, and advocates ready to help.",
+    text: "Volunteer interest, logistics support, field skills, and partner needs.",
     href: "/volunteer/"
   }
+];
+
+const actions = [
+  ["Rescue Animals In Crisis", "Rapid support for dogs and animals facing urgent harm."],
+  ["Support Global Partners", "Work with rescue groups, shelters, clinics, and field teams."],
+  ["Move Aid And Medical Support", "Food, supplies, transport, veterinary care, and evacuation help."],
+  ["Help Animals Reach Safety", "Recovery, rehabilitation, transport, and adoption support."]
 ];
 ---
 
@@ -41,37 +49,53 @@ const programs = [
 >
   <Hero
     eyebrow="United States 501(c)(3) nonprofit and EU registered NGO"
-    title="Global rescue for animals in crisis."
-    text="K9 Global Rescue works with volunteers and partners around the world to help dogs and other animals without a voice through rescue operations, relief support, medical care, transport, rehabilitation, and advocacy."
+    title="Global Rescue For Animals In Crisis."
+    text="K9 Global Rescue helps animals facing war, disaster, cruelty, and abandonment through rescue operations, aid, medical support, transport, and partner networks."
     primaryLabel="Donate"
     primaryHref="/donate/"
     secondaryLabel="Volunteer"
     secondaryHref="/volunteer/"
-    tertiaryLabel="Learn About Our Work"
+    tertiaryLabel="See Our Work"
     tertiaryHref="/operations/"
   />
 
+  <CTASection
+    title="Give. Volunteer. Move Rescue Forward."
+    text="Your next step should be simple: fund the work, join the volunteer network, or learn where K9GR operates."
+    primaryLabel="Donate"
+    primaryHref="/donate/"
+    secondaryLabel="Volunteer"
+    secondaryHref="/volunteer/"
+  />
+
   <section class="section">
-    <div class="container split">
-      <div>
-        <p class="eyebrow">Mission</p>
-        <h2>We stand as one, for all without a voice.</h2>
+    <div class="container">
+      <SectionHeading
+        eyebrow="What we do"
+        title="Operational Help For Animals Without A Voice."
+        text="Short, direct support for urgent rescue needs."
+      />
+      <div class="grid cards">
+        {actions.map(([title, text]) => (
+          <div class="panel text-panel action-card">
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </div>
+        ))}
       </div>
-      <p class="lead">
-        The redesigned site keeps K9GR's urgent mission while making it easier for donors,
-        volunteers, partners, and media to understand the work: global animal rescue,
-        disaster relief, anti-cruelty advocacy, medical care, transport, adoption support,
-        and international cooperation.
-      </p>
     </div>
   </section>
+
+  <QuoteBand
+    support="Every rescue begins with one life. Every safe transport, medical case, and partner mission starts there."
+  />
 
   <section class="section alt">
     <div class="container">
       <SectionHeading
         eyebrow="Focus areas"
-        title="Rescue work organized around clear paths to help."
-        text="Each area below is based on the current site structure and should be reviewed by K9GR before launch for final photos, dates, and active campaign links."
+        title="Where The Work Happens."
+        text="Choose a program area for rescue, relief, transport, advocacy, and support pathways."
       />
       <div class="grid cards">
         {programs.map((program) => <ProgramCard {...program} />)}
@@ -80,44 +104,26 @@ const programs = [
   </section>
 
   <section class="section">
-    <div class="container split">
-      <div class="visual-block"></div>
-      <div>
-        <SectionHeading
-          eyebrow="Global operations"
-          title="Rescue, relief, and coordination across borders."
-          text="K9GR's current site describes work with rescue organizations, government and disaster relief agencies, military-connected volunteers, veterinarians, doctors, first responders, and local partners. This redesign presents that work without overstating active capacity or creating unverified claims."
-        />
-        <ul class="check-list">
-          <li>Emergency supplies, food, shelter support, and transport coordination.</li>
-          <li>Medical care, vaccination, spay/neuter, rehabilitation, and disease mitigation.</li>
-          <li>Advocacy against cruelty, including the dog meat trade and wildlife trafficking.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt">
     <div class="container">
       <SectionHeading
-        eyebrow="Featured story"
-        title="Gracie's story will anchor the rescue story library."
-        text="The current website features Gracie, Apollo and Juno, Jesse, and regional rescue galleries. Final story text, images, and timeline details should be reviewed before launch."
+        eyebrow="Rescue stories"
+        title="Individual Rescue Stories."
+        text="Gracie, Apollo and Juno, Jesse, Ukraine, and Korea stories will be shared as updates become available."
       />
       <div class="grid cards">
         <StoryCard
           title="Gracie"
-          text="Placeholder summary for Gracie's survival and recovery story from South Korea. Needs final approved narrative and images."
+          text="A rescue story from the Korea and Asia program area."
           href="/rescue-stories/"
         />
         <StoryCard
           title="Apollo & Juno"
-          text="Placeholder summary for Apollo and Juno's rescue journey. Needs final approved timeline, photos, and outcome."
+          text="A rescue journey connected to the organization’s global work."
           href="/rescue-stories/"
         />
         <StoryCard
-          title="Ukraine rescue stories"
-          text="Placeholder area for rescue stories from Ukraine, including animals evacuated or supported by partner work."
+          title="Ukraine Rescue Stories"
+          text="Field updates and rescue stories connected to Ukraine support."
           href="/rescue-stories/"
         />
       </div>
@@ -125,11 +131,17 @@ const programs = [
   </section>
 
   <CTASection
-    title="Help keep rescue operations moving."
-    text="Donations support rescue, medical care, food, shelter, transport, emergency response, and partner support. Final donation processors and campaign links are placeholders until K9GR provides approved URLs."
+    title="Rescue Work Needs Fast Support."
+    text="Donations help support rescue operations, medical care, food, shelter, transport, and emergency response."
     primaryLabel="Donate"
     primaryHref="/donate/"
-    secondaryLabel="Volunteer"
-    secondaryHref="/volunteer/"
+    secondaryLabel="See Our Work"
+    secondaryHref="/operations/"
   />
 </Layout>
+
+<style>
+  .action-card {
+    min-height: 0;
+  }
+</style>

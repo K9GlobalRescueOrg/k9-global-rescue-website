@@ -1,0 +1,337 @@
+---
+import Layout from "../components/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import CTASection from "../components/CTASection.astro";
+
+const team = [
+  // Internal launch note: confirm team bio details with K9GR before publication.
+  {
+    name: "Jon Barocas",
+    group: "Executive Director",
+    areas: "Founder · Global Rescue Operations · Executive Leadership",
+    initials: "JB",
+    summary: "Serves as Executive Director, guiding rescue operations, advocacy, leadership, and partner coordination.",
+    bio: [
+      "Jon Barocas serves as Executive Director of K9 Global Rescue. A former combat veteran, he began rescuing dogs in 1994 in Thailand and Cambodia alongside a group of military veterans and formally established K9 Global Rescue in 2017 after decades of animal rescue and advocacy work.",
+      "For more than 30 years, Jon has worked throughout Asia advocating for an end to the dog and cat meat trade and supporting efforts to close slaughterhouses and dog meat farms. His work has also included population control and disease mitigation efforts across the United States, Mexico, Afghanistan, Iraq, Jordan, and Asia.",
+      "When the war in Ukraine began, Jon directed K9 Global Rescue toward animal welfare needs connected to the conflict. The organization has supported rescue and humanitarian aid efforts through veterinary supplies, frontline support, and work with rescue organizations, shelters, and the Armed Forces of Ukraine."
+    ]
+  },
+  {
+    name: "Daniel Holz",
+    group: "Executive Staff Team",
+    areas: "Communications · Logistics · Veteran & Disaster Response Support",
+    initials: "DH",
+    summary: "Supports communications, logistics, field coordination, and disaster response needs.",
+    bio: [
+      "Daniel Holz is a former U.S. Marine Corps Captain with six years of service and experience in aviation support, logistics, and leadership. His background includes work with Marine Aviation Support Group 21, Marine Aviation Logistics Squadron 39, HMLA-469 Vengeance, and HMLA-367 Scarface.",
+      "Daniel completed a deployment to Japan and the South China Sea and served as a UH-1Y Huey crew chief with more than 200 flight hours. He has also volunteered with Team Rubicon, supporting humanitarian relief, disaster response, and community rebuilding efforts.",
+      "At K9 Global Rescue, Daniel supports communications, operational awareness, logistics needs, public messaging, and mission coordination."
+    ]
+  },
+  {
+    name: "Brian Rutter",
+    group: "Executive Staff Team",
+    areas: "Photojournalism · Field Documentation · Ground Operations Support",
+    initials: "BR",
+    summary: "Photojournalist documenting field work, Ukraine efforts, and ground operations.",
+    bio: [
+      "Brian Rutter is a documentary photographer and photojournalist based in Dublin, Ireland. He joined K9 Global Rescue in 2022 to help document the organization's work in Ukraine.",
+      "As a freelance war photographer, Brian brings 13 years of experience covering conflict and humanitarian issues around the world. His role with K9GR has expanded beyond documentation to include assistance with ground operations."
+    ]
+  },
+  {
+    name: "Christina Irinco",
+    group: "Executive Staff Team",
+    areas: "Creative Direction · Events · Volunteer & Community Support",
+    initials: "CI",
+    summary: "Supports creative direction, events, volunteer work, and community service efforts.",
+    bio: [
+      "Christina Irinco is a Los Angeles native with a background spanning events, finance, and graphic design. Her professional experience includes nonprofit, entertainment, higher education, and military-base environments.",
+      "Christina's volunteer background includes Much Love Animal Rescue Society, the Navy-Marine Corps Relief Society, and Team Rubicon, where she has served as a leadership team membership coordinator and sawyer/chainsaw operator.",
+      "Christina supports K9GR with visual communication, organization, and creative execution grounded in practical service."
+    ]
+  },
+  {
+    name: "Geoffrey Thayer",
+    group: "Executive Staff Team",
+    areas: "Development · Organizational Leadership · Partner Support",
+    initials: "GT",
+    summary: "Supports development, organizational leadership, partner relationships, and planning.",
+    bio: [
+      "Geoffrey Thayer was born and raised in the northeast United States and has had rescue animals in his life for as long as he can remember. After college, he volunteered at a therapeutic equestrian center, where he saw the connection between people and animals firsthand.",
+      "Geoffrey has worked in software development, corporate finance, data analysis, and advisement. He holds a Master of Business Administration from Assumption College and is in the final year of a PhD in Organizational Leadership.",
+      "Since 2017, Geoffrey has served as a U.S. Coast Guard Auxiliarist and division-level vice commander, overseeing approximately 200 Auxiliarists across missions that include boating safety, search and rescue, and vessel inspections. He has attended the Leadership and Development Academy at the U.S. Coast Guard Academy twice and lives with his family, including two rescue dogs and two rescue cats."
+    ]
+  },
+  {
+    name: "Pam Callan",
+    group: "Executive Staff Team",
+    areas: "Adoption Coordination · Process Support · Rescue Placement",
+    initials: "PC",
+    summary: "Supports adoption coordination, rescue placement, documentation, and process needs.",
+    bio: [
+      "Pam Callan is a CPA with a master's degree in business and recently retired after more than 40 years as a senior officer for an investment advisory firm. She brings deep experience in finance, organization, documentation, communication, and process management.",
+      "Pam has volunteered with two dog rescues, coordinating adoption events, home visits, and flight transports for dogs moving from kill shelters to forever homes. She lives in Colorado with her husband and a household of rescue animals, including two dogs, a quarter horse, and a cat.",
+      "Her broader volunteer work includes ocean cleanup projects and education efforts related to captive and endangered marine animals. Pam supports adoption coordination and helps interested adopters navigate the process as rescued dogs move toward permanent homes."
+    ]
+  }
+];
+---
+
+<Layout title="Executive Staff Team" description="Meet the Executive Staff Team supporting K9 Global Rescue operations, communications, documentation, development, adoptions, and partner relationships.">
+  <Hero
+    eyebrow="Executive Staff"
+    title="Executive Staff Team"
+    text="K9 Global Rescue's Executive Staff Team supports rescue operations, communications, development, documentation, adoption coordination, creative work, and partner relationships across the organization."
+    primaryLabel="Donate"
+    primaryHref="/donate/"
+    secondaryLabel="Volunteer"
+    secondaryHref="/volunteer/"
+  />
+
+  <section class="section">
+    <div class="container split">
+      <SectionHeading
+        eyebrow="Behind the mission"
+        title="People Supporting The Work."
+        text="The team supports administration, logistics, rescue operations, documentation, adoptions, development, communications, and field work. Some members have worked in high-risk or crisis environments."
+      />
+      <div class="panel text-panel">
+        <h3>Across Borders</h3>
+        <p>Different roles, shared focus: help animals in crisis reach care, safety, and support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Executive Staff Team"
+        title="Current Team Members."
+        text="Functional areas show how each person contributes without listing formal titles."
+      />
+      <div class="team-grid">
+        {team.map((member) => (
+          <article class="team-card">
+            <div class="team-photo" aria-hidden="true">{member.initials}</div>
+            <div class="team-card-copy">
+              <p class="role">{member.group}</p>
+              <h3>{member.name}</h3>
+              <p class="areas">{member.areas}</p>
+              <p>{member.summary}</p>
+              <a href={`#${member.name.toLowerCase().replaceAll(" ", "-")}`}>Read Bio</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bios">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Bios"
+        title="Executive Staff Team Bios."
+        text="Short profiles for the current K9 Global Rescue Executive Staff Team."
+      />
+      <div class="bio-list">
+        {team.map((member) => (
+          <details class="bio-detail" id={member.name.toLowerCase().replaceAll(" ", "-")}>
+            <summary>
+              <span>{member.name}</span>
+              <small>{member.group}</small>
+            </summary>
+            <div>
+              <p class="bio-areas">{member.areas}</p>
+              {member.bio.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Support The Executive Staff Team Behind The Mission."
+    text="Help fund rescue work, partner support, documentation, transport, medical care, and emergency response."
+    primaryLabel="Donate"
+    primaryHref="/donate/"
+    secondaryLabel="Contact"
+    secondaryHref="/contact/"
+  />
+</Layout>
+
+<script>
+  const openTargetBio = () => {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+
+    const target = document.getElementById(id);
+    if (target instanceof HTMLDetailsElement) {
+      target.open = true;
+      target.focus({ preventScroll: true });
+    }
+  };
+
+  window.addEventListener("hashchange", openTargetBio);
+  openTargetBio();
+</script>
+
+<style>
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.15rem;
+  }
+
+  .team-card {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 1rem;
+    min-height: 210px;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    border-radius: var(--radius);
+    padding: 1rem;
+    background:
+      linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(5, 6, 4, 0.82)),
+      var(--color-black);
+    color: var(--color-ivory);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .team-photo {
+    width: 92px;
+    height: 112px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(232, 180, 72, 0.48);
+    border-radius: var(--radius);
+    background:
+      linear-gradient(135deg, rgba(232, 180, 72, 0.24), rgba(232, 180, 72, 0.04)),
+      #050604;
+    color: var(--color-gold);
+    font-size: 1.4rem;
+    font-weight: 950;
+    letter-spacing: 0.04em;
+  }
+
+  .team-card-copy {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.65rem;
+  }
+
+  .team-card h3 {
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .team-card p {
+    margin: 0;
+    color: var(--color-ink-soft);
+  }
+
+  .team-card .role {
+    color: var(--color-ivory);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .team-card .areas,
+  .bio-areas {
+    color: var(--color-gold);
+    font-size: 0.84rem;
+    font-weight: 850;
+    letter-spacing: 0.02em;
+  }
+
+  .bio-areas {
+    margin-bottom: 0.85rem;
+    text-transform: uppercase;
+  }
+
+  .team-card a {
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .team-card a:focus-visible,
+  .bio-detail summary:focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 4px;
+  }
+
+  .bio-list {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .bio-detail {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background:
+      linear-gradient(145deg, rgba(232, 180, 72, 0.08), rgba(232, 180, 72, 0.02)),
+      #090a07;
+    color: var(--color-ivory);
+    scroll-margin-top: 132px;
+  }
+
+  .bio-detail:target {
+    border-color: var(--color-gold);
+    box-shadow:
+      0 0 0 2px rgba(232, 180, 72, 0.22),
+      var(--shadow-soft);
+  }
+
+  .bio-detail summary {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    color: var(--color-gold);
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .bio-detail summary small {
+    color: var(--color-ink-soft);
+    font-size: 0.78rem;
+  }
+
+  .bio-detail div {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  .bio-detail p {
+    max-width: 880px;
+    color: var(--color-ink-soft);
+  }
+
+  @media (max-width: 560px) {
+    .team-card {
+      grid-template-columns: 1fr;
+    }
+
+    .team-photo {
+      width: 100%;
+      height: 112px;
+    }
+
+    .bio-detail summary {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>
