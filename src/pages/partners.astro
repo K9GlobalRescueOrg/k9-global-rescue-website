@@ -31,6 +31,28 @@ import CTASection from "../components/CTASection.astro";
     </div>
   </section>
 
+  <section class="section alt">
+    <div class="container">
+      <article class="miles-panel">
+        <div>
+          <p class="eyebrow">Aviation support</p>
+          <h2>United Airlines Miles On A Mission</h2>
+          <p>
+            K9 Global Rescue is listed through United Airlines' Miles on a Mission program. Donated miles can help support travel connected to rescue, transport, and field needs.
+          </p>
+        </div>
+        <a
+          class="button primary"
+          href="https://donate.mileageplus.com/Charity/Details/3197432"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Donate Miles
+        </a>
+      </article>
+    </div>
+  </section>
+
   <CTASection
     title="Interested In Partnering?"
     text="Start rescue, travel, corporate, donor, or media inquiries through contact."
@@ -38,3 +60,45 @@ import CTASection from "../components/CTASection.astro";
     primaryHref="/contact/"
   />
 </Layout>
+
+<style>
+  .miles-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: clamp(1.25rem, 4vw, 3rem);
+    align-items: center;
+    padding: clamp(1.35rem, 4vw, 2.25rem);
+    border: 1px solid rgba(232, 180, 72, 0.32);
+    border-radius: var(--radius);
+    background:
+      linear-gradient(135deg, rgba(232, 180, 72, 0.28), transparent 44%),
+      #f5e9d0;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .miles-panel h2 {
+    margin-bottom: 0.8rem;
+    color: #090a07;
+  }
+
+  .miles-panel .eyebrow {
+    color: #6d4a09;
+  }
+
+  .miles-panel p:not(.eyebrow) {
+    max-width: 680px;
+    color: #241b0b;
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 760px) {
+    .miles-panel {
+      grid-template-columns: 1fr;
+    }
+
+    .miles-panel .button {
+      justify-self: start;
+    }
+  }
+</style>

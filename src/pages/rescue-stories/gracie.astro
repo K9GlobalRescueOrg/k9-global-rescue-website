@@ -1,0 +1,186 @@
+---
+import Layout from "../../components/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import CTASection from "../../components/CTASection.astro";
+---
+
+<Layout title="Gracie's Rescue Story" description="Gracie's rescue story, from Moran Market in South Korea to freedom, safety, and a family in Colorado.">
+  <Hero
+    eyebrow="Rescue Stories"
+    title="Gracie's Rescue Story"
+    text="From Moran Market in South Korea to freedom, safety, and a family in Colorado."
+    primaryLabel="Donate"
+    primaryHref="/donate/"
+    secondaryLabel="Volunteer"
+    secondaryHref="/volunteer/"
+    tertiaryLabel="More Stories"
+    tertiaryHref="/rescue-stories/"
+  />
+
+  <section class="section">
+    <div class="container story-shell">
+      <article class="story-article">
+        <p class="eyebrow">Gracie</p>
+        <h2>A Life Seen In Time.</h2>
+
+        <section class="story-section first">
+          <h3>Found At Moran Market</h3>
+          <p>
+            On February 15, 2017, during a routine investigative mission at Moran Market in South Korea, one of K9 Global Rescue's co-founders discovered Gracie.
+          </p>
+          <p>
+            It was immediately clear that she was not just another dog in the market. Gracie appeared to be a stolen pet, and her life was in immediate danger. K9 Global Rescue took action to get her out before she could be slaughtered.
+          </p>
+        </section>
+
+        <section class="story-section">
+          <h3>The Road To Safety</h3>
+          <p>
+            After her rescue, Gracie spent about a month in foster care in Korea. Then Jon, co-founder of K9 Global Rescue, flew her to Denver, Colorado, where she joined his family and began a new life.
+          </p>
+        </section>
+
+        <section class="story-section">
+          <h3>A New Life</h3>
+          <p>
+            Gracie was smart, beautiful, and full of love. Like so many dogs rescued from the dog meat trade, she wanted what every animal deserves: safety, kindness, freedom, and a family of her own.
+          </p>
+          <p>
+            After arriving in Colorado, Gracie had the freedom she was nearly denied. She ran, played, and lived as part of a family that loved her. Her story remains a reminder that the dogs caught in this trade are not numbers. They are individuals with personalities, emotions, and the ability to give unconditional love.
+          </p>
+        </section>
+
+        <section class="story-section">
+          <h3>Refusing To Look Away</h3>
+          <p>
+            Gracie's life changed because someone saw her, recognized the danger she was in, and refused to look away. Her memory continues to carry that truth forward.
+          </p>
+        </section>
+
+        <blockquote>
+          "Saving one dog will not change the world, but for that one dog the world will change forever."
+        </blockquote>
+      </article>
+      <aside class="story-side" aria-label="Gracie story photos">
+        <figure class="story-photo primary-photo">
+          <img src="/assets/gracie-portrait-story.jpg" alt="Gracie standing on grass after rescue and recovery." loading="lazy" decoding="async" />
+          <figcaption>Gracie after rescue and recovery.</figcaption>
+        </figure>
+        <figure class="story-photo">
+          <img src="/assets/gracie-cage-discovery-story.jpg" alt="Gracie behind bars at Moran Market when she was discovered." loading="lazy" decoding="async" />
+          <figcaption>Gracie when she was discovered at Moran Market.</figcaption>
+        </figure>
+      </aside>
+    </div>
+  </section>
+
+  <CTASection
+    title="Support Rescue Work Like Gracie's."
+    text="Help K9 Global Rescue support animals in crisis through rescue coordination, medical care, transport, and trusted partner work."
+    primaryLabel="Donate"
+    primaryHref="/donate/"
+    secondaryLabel="Volunteer"
+    secondaryHref="/volunteer/"
+    tertiaryLabel="More Stories"
+    tertiaryHref="/rescue-stories/"
+  />
+</Layout>
+
+<style>
+  .story-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: start;
+  }
+
+  .story-article {
+    max-width: 760px;
+  }
+
+  .story-article h2 {
+    margin-bottom: 1rem;
+    color: var(--color-ivory);
+  }
+
+  .story-section {
+    margin-top: 2rem;
+    padding-top: 1.35rem;
+    border-top: 1px solid rgba(232, 180, 72, 0.22);
+  }
+
+  .story-section.first {
+    margin-top: 0;
+  }
+
+  .story-section h3 {
+    margin-bottom: 0.65rem;
+    color: var(--color-gold);
+  }
+
+  .story-section p,
+  .story-side p {
+    color: var(--color-ink-soft);
+    font-size: 1.04rem;
+    line-height: 1.65;
+  }
+
+  blockquote {
+    margin: 2rem 0 0;
+    padding: 1.35rem 1.5rem;
+    border-left: 5px solid var(--color-gold);
+    background: #090a07;
+    color: var(--color-ivory);
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    font-weight: 900;
+    line-height: 1.35;
+  }
+
+  .story-side {
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+  }
+
+  .story-photo {
+    margin: 0;
+    max-width: 320px;
+  }
+
+  .story-photo img {
+    width: 100%;
+    display: block;
+    border: 1px solid rgba(232, 180, 72, 0.28);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    object-fit: cover;
+  }
+
+  .primary-photo img {
+    aspect-ratio: 4 / 3;
+    object-position: center 45%;
+  }
+
+  .story-photo:not(.primary-photo) img {
+    aspect-ratio: 4 / 5;
+    object-position: center 42%;
+  }
+
+  .story-photo figcaption {
+    margin-top: 0.55rem;
+    color: var(--color-ink-soft);
+    font-size: 0.88rem;
+    font-weight: 800;
+  }
+
+  @media (max-width: 860px) {
+    .story-shell {
+      grid-template-columns: 1fr;
+    }
+
+    .story-side {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      align-items: start;
+    }
+  }
+</style>

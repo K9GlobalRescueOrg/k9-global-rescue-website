@@ -2,64 +2,281 @@
 import Layout from "../components/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
-import QuoteBand from "../components/QuoteBand.astro";
+import CTASection from "../components/CTASection.astro";
+
+const giveLivelyUrl = "https://secure.givelively.org/donate/k9-global-rescue";
+const venmoUrl = "https://venmo.com/k9globalrescue";
 ---
 
-<Layout title="Donate" description="Donate to support K9 Global Rescue work including rescue, medical care, food, shelter, transport, and emergency response.">
+<Layout title="Donate" description="Donate to K9 Global Rescue through Give Lively or Venmo.">
   <Hero
-    eyebrow="Donate"
-    title="Fuel Rescue, Care, Shelter, And Transport."
-    text="Donations can support rescue, medical care, food, shelter, transport, emergency response, and partner work."
-    primaryLabel="Ways to Give"
-    primaryHref="#donation-options"
-    secondaryLabel="Volunteer"
-    secondaryHref="/volunteer/"
+    eyebrow="Support The Mission"
+    title="Help Fund Lifesaving Rescue Work"
+    text="Your donation helps K9 Global Rescue support emergency rescue, transport, medical care, safe placement, and partner-led animal welfare work for animals in need."
+    primaryLabel="Donate Through Give Lively"
+    primaryHref={giveLivelyUrl}
+    primaryTarget="_blank"
+    primaryRel="noopener noreferrer"
+    secondaryLabel="Donate With Venmo"
+    secondaryHref="#venmo"
   />
 
-  <QuoteBand
-    eyebrow="Why giving matters"
-    support="Donations help fund rescue, transport, medical care, food, shelter, and safe placement."
-    compact
-  />
+  <section class="trust-strip" aria-label="Organization status">
+    <div class="container trust-inner">
+      <p>K9 Global Rescue is a United States 501(c)(3) nonprofit organization and EU registered NGO.</p>
+      <p>Donations help support rescue operations, emergency response, transport, medical care, and safe placement.</p>
+    </div>
+  </section>
 
-  <section class="section" id="donation-options">
+  <section class="section">
     <div class="container">
       <SectionHeading
-        eyebrow="Donation options"
-        title="Ways To Support Rescue Work."
-        text="For current donation information, contact the K9 Global Rescue team."
+        eyebrow="What support can fund"
+        title="What Your Donation Supports"
       />
-      <div class="grid cards">
-        <div class="panel text-panel">
-          <h3>General Giving</h3>
-          <p>Support rescue operations, medical care, food, shelter, transport, and emergency response.</p>
-          <a class="button light" href="/contact/">Contact About Giving</a>
-        </div>
-        <div class="panel text-panel">
-          <h3>GoFundMe Campaign</h3>
-          <p>Campaign support can help urgent rescue, medical, and transport needs.</p>
-          <a class="button light" href="/contact/">Ask About Current Campaigns</a>
-        </div>
-        <div class="panel text-panel">
-          <h3>United Airlines Miles On A Mission</h3>
-          <p>Travel support can help rescued animals move toward care and safety.</p>
-          <a class="button light" href="/contact/">Ask About Travel Support</a>
-        </div>
+      <div class="grid cards support-grid">
+        <article class="panel text-panel support-card">
+          <h3>Rescue & Emergency Response</h3>
+          <p>Support urgent rescue work and crisis response for animals facing danger, displacement, or neglect.</p>
+        </article>
+        <article class="panel text-panel support-card">
+          <h3>Transport & Safe Placement</h3>
+          <p>Help move animals from unsafe conditions toward rescue partners, sanctuaries, fosters, and adopters.</p>
+        </article>
+        <article class="panel text-panel support-card">
+          <h3>Medical Care & Recovery</h3>
+          <p>Support veterinary care, stabilization, and recovery after neglect, trauma, disaster, or displacement.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section alt">
+  <section class="section alt" id="ways-to-give">
     <div class="container">
       <SectionHeading
-        eyebrow="What support can fund"
-        title="Rescue Work Has Practical Needs."
+        eyebrow="Donation options"
+        title="Ways To Donate"
+        text="Choose the donation path that works best for you."
       />
-      <ul class="check-list">
-        <li>Rescue, evacuation, shelter, and transport.</li>
-        <li>Veterinary care, vaccination, spay/neuter, and medical support.</li>
-        <li>Food, supplies, rehabilitation, adoption support, and partners.</li>
-      </ul>
+      <div class="donation-options">
+        <article class="donation-card primary-give">
+          <p class="method-label">Recommended</p>
+          <h3>Give Lively</h3>
+          <p>Donate securely through K9 Global Rescue's Give Lively donation page.</p>
+          <a class="button primary" href={giveLivelyUrl} target="_blank" rel="noopener noreferrer">
+            Donate Through Give Lively
+          </a>
+        </article>
+
+        <article class="donation-card venmo-card" id="venmo">
+          <p class="method-label">Venmo</p>
+          <h3>Donate With Venmo</h3>
+          <p>Prefer Venmo? Send donations directly through Venmo.</p>
+          <div class="venmo-handle" aria-label="K9 Global Rescue Venmo handle">@k9globalrescue</div>
+          <a class="button secondary-dark" href={venmoUrl} target="_blank" rel="noopener noreferrer">
+            Open Venmo
+          </a>
+        </article>
+      </div>
     </div>
   </section>
+
+  <section class="section quote-section">
+    <div class="container quote-shell">
+      <blockquote>
+        "Saving one dog will not change the world, but for that one dog the world will change forever."
+      </blockquote>
+      <p>Questions about donating? Contact <a href="mailto:info@k9globalrescue.org">info@k9globalrescue.org</a>.</p>
+    </div>
+  </section>
+
+  <CTASection
+    title="Stand With Animals In Crisis."
+    text="Give through K9 Global Rescue's primary donation page or join the volunteer network supporting rescue work."
+    primaryLabel="Donate Through Give Lively"
+    primaryHref={giveLivelyUrl}
+    primaryTarget="_blank"
+    primaryRel="noopener noreferrer"
+    secondaryLabel="Volunteer"
+    secondaryHref="/volunteer/"
+  />
 </Layout>
+
+<style>
+  .trust-strip {
+    padding: 1.2rem 0;
+    border-top: 1px solid rgba(232, 180, 72, 0.36);
+    border-bottom: 1px solid rgba(232, 180, 72, 0.36);
+    background: #000000;
+  }
+
+  .trust-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    gap: clamp(1rem, 3vw, 2rem);
+    align-items: center;
+  }
+
+  .trust-inner p {
+    margin: 0;
+    color: var(--color-ivory);
+    font-weight: 800;
+    line-height: 1.45;
+  }
+
+  .trust-inner p + p {
+    color: var(--color-ink-soft);
+    font-size: 0.98rem;
+    font-weight: 650;
+  }
+
+  .support-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .support-card {
+    min-height: 100%;
+  }
+
+  .donation-options {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+    gap: clamp(1.25rem, 4vw, 2rem);
+    align-items: stretch;
+  }
+
+  .donation-card {
+    display: flex;
+    min-height: 360px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: clamp(1.35rem, 4vw, 2.3rem);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .donation-card h3 {
+    margin-bottom: 0.85rem;
+    font-size: clamp(1.65rem, 3vw, 2.4rem);
+    text-transform: uppercase;
+  }
+
+  .donation-card p:not(.method-label) {
+    max-width: 520px;
+    margin-bottom: 1.35rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .method-label {
+    display: inline-flex;
+    margin: 0 0 1rem;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.74rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .primary-give {
+    border: 1px solid rgba(0, 0, 0, 0.42);
+    background:
+      linear-gradient(135deg, rgba(232, 180, 72, 0.38), transparent 42%),
+      #f5e9d0;
+    color: #090a07;
+  }
+
+  .primary-give .method-label {
+    color: #68470a;
+  }
+
+  .primary-give p:not(.method-label) {
+    color: #211a10;
+  }
+
+  .venmo-card {
+    border: 1px solid rgba(232, 180, 72, 0.34);
+    background:
+      linear-gradient(145deg, rgba(232, 180, 72, 0.12), rgba(232, 180, 72, 0.02)),
+      #080906;
+    color: var(--color-ivory);
+  }
+
+  .venmo-card .method-label,
+  .venmo-card h3 {
+    color: var(--color-gold);
+  }
+
+  .venmo-card p:not(.method-label) {
+    color: var(--color-ink-soft);
+  }
+
+  .venmo-handle {
+    width: 100%;
+    margin: auto 0 1.2rem;
+    padding: 1rem;
+    border: 1px solid rgba(232, 180, 72, 0.38);
+    border-radius: var(--radius);
+    background: #000000;
+    color: var(--color-gold);
+    font-size: clamp(1.35rem, 3vw, 2.05rem);
+    font-weight: 950;
+    letter-spacing: 0;
+  }
+
+  .button.secondary-dark {
+    border-color: rgba(232, 180, 72, 0.66);
+    background: #000000;
+    color: var(--color-ivory);
+  }
+
+  .button.secondary-dark:hover {
+    background: rgba(232, 180, 72, 0.12);
+    color: var(--color-gold);
+  }
+
+  .quote-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .quote-shell {
+    max-width: 920px;
+  }
+
+  .quote-shell blockquote {
+    margin: 0;
+    padding: clamp(1.25rem, 4vw, 2rem);
+    border-left: 5px solid var(--color-gold);
+    background: #090a07;
+    color: var(--color-ivory);
+    font-size: clamp(1.45rem, 3vw, 2.5rem);
+    font-weight: 950;
+    line-height: 1.18;
+  }
+
+  .quote-shell p {
+    margin-top: 1rem;
+    color: var(--color-ink-soft);
+    font-weight: 750;
+  }
+
+  @media (max-width: 900px) {
+    .support-grid,
+    .donation-options,
+    .trust-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .donation-card {
+      min-height: auto;
+    }
+
+    .venmo-handle {
+      margin-top: 0.35rem;
+    }
+  }
+</style>
