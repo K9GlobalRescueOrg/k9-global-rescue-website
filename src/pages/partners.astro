@@ -3,9 +3,12 @@ import Layout from "../components/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import CTASection from "../components/CTASection.astro";
+import BackButton from "../components/BackButton.astro";
 ---
 
 <Layout title="Partners" description="K9 Global Rescue partner information for rescue partners, aviation and travel partners, donors, corporate supporters, and inquiries.">
+  <BackButton href="/" />
+
   <Hero
     eyebrow="Partners"
     title="Rescue Work Depends On Trusted Partners."
@@ -24,45 +27,38 @@ import CTASection from "../components/CTASection.astro";
       />
       <div class="grid cards">
         <div class="panel text-panel"><h3>Rescue Partners</h3><p>Shelters, clinics, rescues, and field partners.</p></div>
-        <div class="panel text-panel"><h3>Aviation And Travel</h3><p>Flight, mileage, travel, and transport support.</p></div>
+        <div class="panel text-panel"><h3>Aviation And Travel</h3><p>Flight, travel, and transport support.</p></div>
         <div class="panel text-panel"><h3>Donors And Corporate Supporters</h3><p>Support for rescue needs, field supplies, transport, and emergency response.</p></div>
-        <div class="panel text-panel"><h3>Partner Inquiries</h3><p>Route new conversations through contact.</p></div>
+        <div class="panel text-panel"><h3>Partner Inquiries</h3><p>Start partner conversations through info@k9globalrescue.org.</p></div>
       </div>
     </div>
   </section>
 
   <section class="section alt">
     <div class="container">
-      <article class="miles-panel">
+      <article class="partner-panel">
         <div>
-          <p class="eyebrow">Aviation support</p>
-          <h2>United Airlines Miles On A Mission</h2>
+          <p class="eyebrow">Partner support</p>
+          <h2>Start A Partner Conversation</h2>
           <p>
-            K9 Global Rescue is listed through United Airlines' Miles on a Mission program. Donated miles can help support travel connected to rescue, transport, and field needs.
+            Rescue, travel, corporate, donor, and media partners can help strengthen animal welfare support, transport pathways, supplies, and response coordination.
           </p>
         </div>
-        <a
-          class="button primary"
-          href="https://donate.mileageplus.com/Charity/Details/3197432"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Donate Miles
-        </a>
+        <a class="button primary" href="mailto:info@k9globalrescue.org">Email K9GR</a>
       </article>
     </div>
   </section>
 
   <CTASection
     title="Interested In Partnering?"
-    text="Start rescue, travel, corporate, donor, or media inquiries through contact."
-    primaryLabel="Contact"
-    primaryHref="/contact/"
+    text="Start rescue, travel, corporate, donor, or media inquiries through info@k9globalrescue.org."
+    primaryLabel="Email K9GR"
+    primaryHref="mailto:info@k9globalrescue.org"
   />
 </Layout>
 
 <style>
-  .miles-panel {
+  .partner-panel {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: clamp(1.25rem, 4vw, 3rem);
@@ -76,16 +72,16 @@ import CTASection from "../components/CTASection.astro";
     box-shadow: var(--shadow-soft);
   }
 
-  .miles-panel h2 {
+  .partner-panel h2 {
     margin-bottom: 0.8rem;
     color: #090a07;
   }
 
-  .miles-panel .eyebrow {
+  .partner-panel .eyebrow {
     color: #6d4a09;
   }
 
-  .miles-panel p:not(.eyebrow) {
+  .partner-panel p:not(.eyebrow) {
     max-width: 680px;
     color: #241b0b;
     font-size: 1.05rem;
@@ -93,11 +89,11 @@ import CTASection from "../components/CTASection.astro";
   }
 
   @media (max-width: 760px) {
-    .miles-panel {
+    .partner-panel {
       grid-template-columns: 1fr;
     }
 
-    .miles-panel .button {
+    .partner-panel .button {
       justify-self: start;
     }
   }

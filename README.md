@@ -70,45 +70,48 @@ Use these settings when creating the Netlify site:
 - Publish directory: `dist`
 - Node version: use the current Netlify LTS default unless the project later pins one
 
-No real domain is connected in this repo. Domain/DNS setup should happen separately after K9GR review and launch approval.
+No real domain is connected in this repo. Domain/DNS setup should happen separately when K9GR is ready to connect production hosting.
 
 ## Site Structure
 
 - Home: mission hero, CTAs, focus areas, operations overview, donation CTA
 - About: organization overview, veteran and volunteer-led network language, credibility note
-- Team: current executive leadership, executive staff, support role cards, functional area labels, and expandable bios pending K9GR verification
+- Team: current executive leadership, executive staff, volunteer cadre cards, functional area labels, photos, and expandable bios
 - Our Mission: focused mission overview and core support areas
-- Global Rescue Operations: hub linking to program areas
+- Global Rescue Operations: hub linking to program areas, including Israel/Gaza humanitarian animal welfare support
 - Korea & Asia: dog meat trade rescue, rehabilitation, transport, advocacy, and field video
 - Ukraine: humanitarian aid, animal medical aid, supplies, evacuations, partner support
 - Disaster Relief: emergency response, transport, supplies, partner support
 - Rescue Stories: story index for Gracie, Apollo and Juno, Jesse, Ukraine, and Korea
 - Volunteer: opportunity overview and official Google Form intake link
-- Donate: donation support areas and link placeholders
-- Media / News: Dog Warriors section, YouTube placeholder, Markdown news collection
-- Partners: partner category placeholders
+- Donate: donation support areas and confirmed Give Lively, Venmo, PayPal, and Stripe / Credit Card links
+- Media / News: Dog Warriors section, YouTube channel section, Markdown news collection
+- Partners: partner category overview and inquiry path
 - Contact: Netlify Forms-ready inquiry form
 
-## Launch Review Placeholders
+## Internal Review Notes
 
-K9GR should review or provide the following before launch:
+K9GR should keep these items in the internal pre-publication checklist:
 
-- Final approved donation links, including GoFundMe and general donation processor
-- Approved United Airlines Miles on a Mission link, if still active
-- Ongoing review of volunteer intake wording and placement guidance
+- Confirm donation provider links remain current:
+  - Give Lively: `https://secure.givelively.org/donate/k9-global-rescue`
+  - Venmo: `https://venmo.com/k9globalrescue`
+  - PayPal: `https://paypal.me/k9globalrescue`
+  - Stripe / Credit Card: `https://buy.stripe.com/7sI16l3a3eG6gSY144`
+- Confirm volunteer intake wording and placement guidance
 - Final organization/legal wording for 501(c)(3), EU NGO, and any registration references
 - Current program details, partner names, and active deployment claims
 - Any specific Ukraine trip counts, locations, or current field operations
 - South Korea dog meat ban wording and implementation date details
-- Approved rescue story copy and images for Gracie, Apollo and Juno, Jesse, Ukraine, and Korea
-- Dog Warriors/media claims, review links, event details, and rights-approved media
-- Final public contact details, if K9GR wants emails or phone numbers listed
+- Rescue story copy and images for Gracie, Apollo and Juno, Jesse, Ukraine, and Korea
+- Dog Warriors/media claims, external links, event details, and rights-cleared media
+- Public contact details beyond `info@k9globalrescue.org`, if K9GR wants additional contacts listed
 - Team bio details, functional area labels, credentials, affiliations, support classifications, and service-history wording
 - Historical Middle East or disease mitigation work should only be added later as a rescue story or update if K9GR provides approved public content.
 
 ## Content Safety Notes
 
 - No private donor, volunteer, or staff data is included.
-- Donation pages use placeholders only and do not collect payment details.
-- Claims requiring current verification are marked or intentionally softened.
+- Donation pages use only the confirmed public giving links listed above and do not collect payment details.
+- Claims requiring current confirmation are intentionally softened in public copy.
 - The contact form is Netlify Forms-ready and can be replaced by an approved CRM or form provider later.

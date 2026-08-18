@@ -3,11 +3,14 @@ import Layout from "../components/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import CTASection from "../components/CTASection.astro";
+import BackButton from "../components/BackButton.astro";
 
 const volunteerFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfcv8pCy5hDpN8ThFcvmn8T1oJb4ELTZb0I4vEbA4-Yx2wKeA/viewform";
 ---
 
 <Layout title="Volunteer" description="Volunteer with K9 Global Rescue through field, logistics, admin, media, transport, and professional support opportunities.">
+  <BackButton href="/" />
+
   <Hero
     eyebrow="Volunteer"
     title="Build The Network Before The Next Urgent Call."
@@ -39,14 +42,14 @@ const volunteerFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfcv8pCy5hDpN
         <h3>Volunteer Intake</h3>
         <p>Volunteer interest is evaluated by the K9 Global Rescue team. Submitting the form does not guarantee immediate placement or deployment.</p>
         <a class="button primary" href={volunteerFormUrl} target="_blank" rel="noopener noreferrer">Apply to Volunteer</a>
-        <p class="question-note">For general questions, use the <a href="/contact/">contact form</a>. For volunteer applications, complete the official volunteer intake form.</p>
+        <p class="question-note">For general questions, email <a href="mailto:info@k9globalrescue.org">info@k9globalrescue.org</a>. For volunteer applications, complete the official volunteer intake form.</p>
       </div>
     </div>
   </section>
 
   <CTASection
     title="Ready Volunteers Make Response Easier."
-    text="For general questions, use the contact form. For volunteer applications, complete the official volunteer intake form."
+    text="For general questions, email info@k9globalrescue.org. For volunteer applications, complete the official volunteer intake form."
     primaryLabel="Apply to Volunteer"
     primaryHref={volunteerFormUrl}
     primaryTarget="_blank"

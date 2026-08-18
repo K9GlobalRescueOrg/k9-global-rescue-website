@@ -2,13 +2,16 @@
 import Layout from "../components/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
+import BackButton from "../components/BackButton.astro";
 ---
 
 <Layout title="Contact" description="Contact K9 Global Rescue for general questions, donation questions, partnership inquiries, media inquiries, rescue-related inquiries, and other non-volunteer communication.">
+  <BackButton href="/" />
+
   <Hero
     eyebrow="Contact"
     title="Send A General Inquiry."
-    text="Use the contact form for questions, donation, partnership, media, rescue-related, and other non-volunteer communication."
+    text="Use the contact form or email info@k9globalrescue.org for questions, donation, partnership, media, rescue-related, and other non-volunteer communication."
     primaryLabel="Use Contact Form"
     primaryHref="#contact-form"
     secondaryLabel="Volunteer"
@@ -21,7 +24,7 @@ import SectionHeading from "../components/SectionHeading.astro";
         <SectionHeading
           eyebrow="General contact"
           title="Questions And Inquiries."
-          text="This form is for general communication, donation questions, partnership inquiries, media requests, rescue-related inquiries, and other non-volunteer messages."
+          text="This form is for general communication, donation questions, partnership inquiries, media requests, rescue-related inquiries, and other non-volunteer messages. You can also email info@k9globalrescue.org."
         />
         <ul class="check-list">
           <li>General questions.</li>
@@ -29,6 +32,7 @@ import SectionHeading from "../components/SectionHeading.astro";
           <li>Partnership, media, or rescue-related inquiries.</li>
           <li>Other non-volunteer communication.</li>
         </ul>
+        <p class="contact-note">General inquiries: <a href="mailto:info@k9globalrescue.org">info@k9globalrescue.org</a></p>
         <p class="contact-note">Interested in volunteering? Visit the <a href="/volunteer/">Volunteer page</a> to complete the official intake form.</p>
       </div>
       <form class="panel text-panel form-grid" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">

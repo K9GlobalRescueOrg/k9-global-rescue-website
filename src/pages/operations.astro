@@ -3,10 +3,12 @@ import Layout from "../components/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import ProgramCard from "../components/ProgramCard.astro";
+import BackButton from "../components/BackButton.astro";
 
 const ops = [
   { title: "Korea & Asia", text: "Dog meat trade rescue, rehabilitation, transport, and advocacy.", href: "/korea-asia/" },
   { title: "Ukraine", text: "Humanitarian aid, animal medical aid, evacuations, and partner support.", href: "/ukraine/" },
+  { title: "Israel/Gaza", text: "Humanitarian animal rescue support, emergency response coordination, and partner-led care for animals affected by crisis.", href: "/contact/" },
   { title: "Disaster Relief", text: "Supplies, transport, crisis response, and partner support.", href: "/disaster-relief/" },
   { title: "Rescue Coordination", text: "Trusted partner work, urgent response paths, and practical support where help is needed most.", href: "/contact/" },
   { title: "Transport And Partner Support", text: "Helping animals move toward care, shelter, rescue partners, and adoption pathways.", href: "/mission/" },
@@ -16,6 +18,8 @@ const ops = [
 ---
 
 <Layout title="Global Rescue Operations" description="Overview of K9 Global Rescue international rescue work and program areas.">
+  <BackButton href="/" />
+
   <Hero
     variant="operations"
     eyebrow="Global Rescue Operations"

@@ -3,6 +3,7 @@ import Layout from "../components/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import CTASection from "../components/CTASection.astro";
+import BackButton from "../components/BackButton.astro";
 
 const team = [
   // Internal launch note: confirm team bio details with K9GR before publication.
@@ -137,6 +138,8 @@ const slugify = (name: string) => name.toLowerCase().replaceAll(" ", "-");
 ---
 
 <Layout title="Team" description="Meet the K9 Global Rescue executive leadership, executive staff team, photography and field documentation support, and Volunteer Cadre.">
+  <BackButton href="/about/" />
+
   <Hero
     eyebrow="Team"
     title="Team And Field Support"

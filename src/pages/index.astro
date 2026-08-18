@@ -18,6 +18,11 @@ const programs = [
     href: "/ukraine/"
   },
   {
+    title: "Israel/Gaza",
+    text: "Humanitarian animal rescue support, emergency coordination, and partner-led care.",
+    href: "/operations/#israel-gaza"
+  },
+  {
     title: "Disaster Relief",
     text: "Emergency supplies, transport, partner coordination, and response support.",
     href: "/disaster-relief/"
@@ -57,6 +62,12 @@ const actions = [
     tertiaryLabel="Learn About Our Work"
     tertiaryHref="/operations/"
   />
+
+  <section class="values-strip" aria-label="K9 Global Rescue values">
+    <div class="container">
+      <p>Action · Compassion · Hope</p>
+    </div>
+  </section>
 
   <CTASection
     title="Give. Volunteer. Move Rescue Forward."
@@ -113,6 +124,22 @@ const actions = [
 </Layout>
 
 <style>
+  .values-strip {
+    border-block: 1px solid rgba(232, 180, 72, 0.32);
+    background: #000000;
+    color: var(--color-gold);
+    padding: 1rem 0;
+  }
+
+  .values-strip p {
+    margin: 0;
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    font-weight: 950;
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
   .action-card {
     min-height: 0;
   }

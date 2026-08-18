@@ -3,6 +3,7 @@ import Layout from "../components/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import ProgramCard from "../components/ProgramCard.astro";
+import BackButton from "../components/BackButton.astro";
 
 const focusAreas = [
   [
@@ -21,6 +22,8 @@ const focusAreas = [
 ---
 
 <Layout title="Our Mission" description="K9 Global Rescue focuses on animals in crisis, rescue coordination, transport, medical care, emergency support, and trusted partner work.">
+  <BackButton href="/" />
+
   <Hero
     eyebrow="Our Mission"
     title="Rescue, Relief, Advocacy, And Recovery."

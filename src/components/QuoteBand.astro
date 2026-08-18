@@ -17,7 +17,7 @@ const {
     <div class="quote-band__inner">
       <p class="eyebrow">{eyebrow}</p>
       <blockquote>
-        "Saving one dog will not change the world, but for that one dog the world will change forever."
+        “Saving one dog won’t change the world, but for that one dog the world will change forever.”<sup>™</sup>
       </blockquote>
       {support && <p class="quote-band__support">{support}</p>}
     </div>
@@ -59,6 +59,14 @@ const {
     margin: 0;
     max-width: 980px;
     text-transform: none;
+  }
+
+  .quote-band sup {
+    color: var(--color-gold);
+    font-size: 0.28em;
+    line-height: 0;
+    margin-left: 0.08em;
+    vertical-align: super;
   }
 
   .quote-band.compact blockquote {

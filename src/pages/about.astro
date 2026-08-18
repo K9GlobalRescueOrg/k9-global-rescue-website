@@ -4,13 +4,16 @@ import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import CTASection from "../components/CTASection.astro";
 import QuoteBand from "../components/QuoteBand.astro";
+import BackButton from "../components/BackButton.astro";
 ---
 
 <Layout title="About" description="Learn who K9 Global Rescue is and how its volunteer-led global rescue network supports animals in crisis.">
+  <BackButton href="/" />
+
   <Hero
     eyebrow="About K9GR"
     title="A Volunteer-Led Network For Animals Without A Voice."
-    text="K9 Global Rescue is a United States 501(c)(3) nonprofit and EU registered NGO working with volunteers and rescue partners."
+    text="K9 Global Rescue is a non-partisan, non-political, veteran-led United States 501(c)(3) nonprofit and EU registered NGO working worldwide with volunteers and rescue partners."
     primaryLabel="Our Mission"
     primaryHref="/mission/"
     secondaryLabel="Contact"
@@ -28,8 +31,8 @@ import QuoteBand from "../components/QuoteBand.astro";
         <a class="button secondary" href="/meet-the-team/">Meet The Team</a>
       </div>
       <div class="panel text-panel">
-        <h3>Credibility Note</h3>
-        <p>K9 Global Rescue presents its nonprofit and NGO identity clearly so donors, volunteers, partners, and media understand the organization.</p>
+        <h3>Action · Compassion · Hope</h3>
+        <p>A clear values line behind the organization’s rescue, relief, transport, and partner support work.</p>
       </div>
     </div>
   </section>
@@ -52,7 +55,7 @@ import QuoteBand from "../components/QuoteBand.astro";
         </div>
         <div class="panel text-panel">
           <h3>Donor Clarity</h3>
-          <p>Donation pages explain what support can fund and direct current giving questions to the team.</p>
+          <p>Donation pages explain what support can fund and direct giving questions to info@k9globalrescue.org.</p>
         </div>
         <div class="panel text-panel">
           <h3>Meet The Team</h3>

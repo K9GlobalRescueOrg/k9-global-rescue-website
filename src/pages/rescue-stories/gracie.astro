@@ -2,9 +2,12 @@
 import Layout from "../../components/Layout.astro";
 import Hero from "../../components/Hero.astro";
 import CTASection from "../../components/CTASection.astro";
+import BackButton from "../../components/BackButton.astro";
 ---
 
 <Layout title="Gracie's Rescue Story" description="Gracie's rescue story, from Moran Market in South Korea to freedom, safety, and a family in Colorado.">
+  <BackButton href="/rescue-stories/" label="← Back To Rescue Stories" />
+
   <Hero
     eyebrow="Rescue Stories"
     title="Gracie's Rescue Story"
@@ -58,7 +61,7 @@ import CTASection from "../../components/CTASection.astro";
         </section>
 
         <blockquote>
-          "Saving one dog will not change the world, but for that one dog the world will change forever."
+          “Saving one dog won’t change the world, but for that one dog the world will change forever.”<sup>™</sup>
         </blockquote>
       </article>
       <aside class="story-side" aria-label="Gracie story photos">

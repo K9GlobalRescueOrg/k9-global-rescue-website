@@ -3,9 +3,12 @@ import Layout from "../components/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import CTASection from "../components/CTASection.astro";
+import BackButton from "../components/BackButton.astro";
 ---
 
 <Layout title="Ukraine" description="K9 Global Rescue Ukraine page for humanitarian aid, animal medical aid, evacuations, pet supplies, and rescue partner support.">
+  <BackButton href="/operations/" label="← Back To Operations" />
+
   <Hero
     eyebrow="Ukraine"
     title="Standing With The People And Animals Of Ukraine."
@@ -54,7 +57,7 @@ import CTASection from "../components/CTASection.astro";
   <section class="section alt">
     <div class="container">
       <div class="note">
-        <strong>Current Information:</strong> For the latest Ukraine support details, contact the K9 Global Rescue team.
+        <strong>Current Information:</strong> For the latest Ukraine support details, contact info@k9globalrescue.org.
       </div>
     </div>
   </section>

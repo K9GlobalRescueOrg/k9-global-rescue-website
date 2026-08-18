@@ -2,12 +2,15 @@
 import Layout from "../components/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
+import BackButton from "../components/BackButton.astro";
 import { getCollection } from "astro:content";
 
 const news = await getCollection("news");
 ---
 
 <Layout title="Media / News" description="K9 Global Rescue media, news, Dog Warriors features, field updates, rescue stories, and video content.">
+  <BackButton href="/" />
+
   <Hero
     eyebrow="Media / News"
     title="A Clearer Home For Films, Videos, And Field Updates."
@@ -51,12 +54,12 @@ const news = await getCollection("news");
         <SectionHeading
           eyebrow="Field media"
           title="Videos And Field Updates."
-          text="Video updates and field media can be shared as approved public content is added."
+          text="Video updates and field media help document rescue work, animal welfare needs, and partner support."
         />
       </div>
       <div class="panel text-panel">
         <h3>Media Inquiries</h3>
-        <p>For interviews, documentary inquiries, or field media questions, use the general contact form.</p>
+        <p>For interviews, documentary inquiries, or field media questions, email info@k9globalrescue.org.</p>
         <a class="button secondary" href="/contact/">Contact</a>
       </div>
     </div>

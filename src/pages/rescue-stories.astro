@@ -3,6 +3,7 @@ import Layout from "../components/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import StoryCard from "../components/StoryCard.astro";
+import BackButton from "../components/BackButton.astro";
 
 const stories = [
   {
@@ -41,6 +42,8 @@ const stories = [
 ---
 
 <Layout title="Rescue Stories" description="K9 Global Rescue individual rescue stories for Gracie, Apollo, Jesse, and Moose.">
+  <BackButton href="/" />
+
   <Hero
     eyebrow="Rescue Stories"
     title="Individual Lives At The Center Of The Mission."

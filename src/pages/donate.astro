@@ -3,12 +3,17 @@ import Layout from "../components/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import CTASection from "../components/CTASection.astro";
+import BackButton from "../components/BackButton.astro";
 
 const giveLivelyUrl = "https://secure.givelively.org/donate/k9-global-rescue";
 const venmoUrl = "https://venmo.com/k9globalrescue";
+const paypalUrl = "https://paypal.me/k9globalrescue";
+const stripeUrl = "https://buy.stripe.com/7sI16l3a3eG6gSY144";
 ---
 
-<Layout title="Donate" description="Donate to K9 Global Rescue through Give Lively or Venmo.">
+<Layout title="Donate" description="Donate to K9 Global Rescue through Give Lively, Venmo, PayPal, or Stripe credit card giving.">
+  <BackButton href="/" />
+
   <Hero
     eyebrow="Support The Mission"
     title="Help Fund Lifesaving Rescue Work"
@@ -17,13 +22,13 @@ const venmoUrl = "https://venmo.com/k9globalrescue";
     primaryHref={giveLivelyUrl}
     primaryTarget="_blank"
     primaryRel="noopener noreferrer"
-    secondaryLabel="Donate With Venmo"
-    secondaryHref="#venmo"
+    secondaryLabel="Other Ways To Give"
+    secondaryHref="#ways-to-give"
   />
 
   <section class="trust-strip" aria-label="Organization status">
     <div class="container trust-inner">
-      <p>K9 Global Rescue is a United States 501(c)(3) nonprofit organization and EU registered NGO.</p>
+      <p>K9 Global Rescue is a non-partisan, non-political, veteran-led United States 501(c)(3) nonprofit and EU registered NGO.</p>
       <p>Donations help support rescue operations, emergency response, transport, medical care, and safe placement.</p>
     </div>
   </section>
@@ -56,7 +61,7 @@ const venmoUrl = "https://venmo.com/k9globalrescue";
       <SectionHeading
         eyebrow="Donation options"
         title="Ways To Donate"
-        text="Choose the donation path that works best for you."
+        text="Choose the giving method that works best for you. Donations help support rescue operations, emergency response, transport, medical care, and safe placement for animals in need."
       />
       <div class="donation-options">
         <article class="donation-card primary-give">
@@ -69,12 +74,30 @@ const venmoUrl = "https://venmo.com/k9globalrescue";
         </article>
 
         <article class="donation-card venmo-card" id="venmo">
-          <p class="method-label">Venmo</p>
-          <h3>Donate With Venmo</h3>
+          <p class="method-label">Quick option</p>
+          <h3>Venmo</h3>
           <p>Prefer Venmo? Send donations directly through Venmo.</p>
           <div class="venmo-handle" aria-label="K9 Global Rescue Venmo handle">@k9globalrescue</div>
           <a class="button secondary-dark" href={venmoUrl} target="_blank" rel="noopener noreferrer">
-            Open Venmo
+            Donate With Venmo
+          </a>
+        </article>
+
+        <article class="donation-card dark-card">
+          <p class="method-label">Quick option</p>
+          <h3>PayPal</h3>
+          <p>Donate through K9 Global Rescue’s PayPal giving link.</p>
+          <a class="button secondary-dark" href={paypalUrl} target="_blank" rel="noopener noreferrer">
+            Donate With PayPal
+          </a>
+        </article>
+
+        <article class="donation-card dark-card">
+          <p class="method-label">Credit card</p>
+          <h3>Stripe / Credit Card</h3>
+          <p>Donate by credit card through K9 Global Rescue’s secure Stripe donation link.</p>
+          <a class="button secondary-dark" href={stripeUrl} target="_blank" rel="noopener noreferrer">
+            Donate By Credit Card
           </a>
         </article>
       </div>
@@ -84,7 +107,7 @@ const venmoUrl = "https://venmo.com/k9globalrescue";
   <section class="section quote-section">
     <div class="container quote-shell">
       <blockquote>
-        "Saving one dog will not change the world, but for that one dog the world will change forever."
+        “Saving one dog won’t change the world, but for that one dog the world will change forever.”<sup>™</sup>
       </blockquote>
       <p>Questions about donating? Contact <a href="mailto:info@k9globalrescue.org">info@k9globalrescue.org</a>.</p>
     </div>
@@ -140,14 +163,14 @@ const venmoUrl = "https://venmo.com/k9globalrescue";
 
   .donation-options {
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: clamp(1.25rem, 4vw, 2rem);
     align-items: stretch;
   }
 
   .donation-card {
     display: flex;
-    min-height: 360px;
+    min-height: 330px;
     flex-direction: column;
     align-items: flex-start;
     padding: clamp(1.35rem, 4vw, 2.3rem);
@@ -206,25 +229,39 @@ const venmoUrl = "https://venmo.com/k9globalrescue";
   }
 
   .venmo-card .method-label,
-  .venmo-card h3 {
+  .venmo-card h3,
+  .dark-card .method-label,
+  .dark-card h3 {
     color: var(--color-gold);
   }
 
-  .venmo-card p:not(.method-label) {
+  .venmo-card p:not(.method-label),
+  .dark-card p:not(.method-label) {
     color: var(--color-ink-soft);
+  }
+
+  .dark-card {
+    border: 1px solid rgba(232, 180, 72, 0.34);
+    background:
+      linear-gradient(145deg, rgba(232, 180, 72, 0.1), rgba(232, 180, 72, 0.015)),
+      #080906;
+    color: var(--color-ivory);
   }
 
   .venmo-handle {
     width: 100%;
+    min-width: 0;
     margin: auto 0 1.2rem;
     padding: 1rem;
     border: 1px solid rgba(232, 180, 72, 0.38);
     border-radius: var(--radius);
     background: #000000;
     color: var(--color-gold);
-    font-size: clamp(1.35rem, 3vw, 2.05rem);
+    font-size: clamp(1.05rem, 1.35vw, 1.35rem);
     font-weight: 950;
     letter-spacing: 0;
+    line-height: 1.12;
+    overflow-wrap: anywhere;
   }
 
   .button.secondary-dark {
@@ -258,6 +295,14 @@ const venmoUrl = "https://venmo.com/k9globalrescue";
     line-height: 1.18;
   }
 
+  .quote-shell sup {
+    color: var(--color-gold);
+    font-size: 0.34em;
+    line-height: 0;
+    margin-left: 0.08em;
+    vertical-align: super;
+  }
+
   .quote-shell p {
     margin-top: 1rem;
     color: var(--color-ink-soft);
@@ -276,7 +321,15 @@ const venmoUrl = "https://venmo.com/k9globalrescue";
     }
 
     .venmo-handle {
+      font-size: clamp(1.28rem, 5vw, 1.8rem);
       margin-top: 0.35rem;
+      overflow-wrap: normal;
+    }
+  }
+
+  @media (min-width: 901px) and (max-width: 1120px) {
+    .donation-options {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 </style>
