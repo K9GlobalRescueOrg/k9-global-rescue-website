@@ -89,6 +89,19 @@ const team = [
       "Brian Rutter supports K9 Global Rescue through photography, field documentation, and visual storytelling. Based in Dublin, Ireland, Brian joined K9GR in 2022 to help document rescue and humanitarian efforts in Ukraine.",
       "His background as a documentary photographer and freelance war photographer brings field experience to the organization's documentation and support work."
     ]
+  },
+  {
+    name: "Rafał Sikora",
+    group: "General Counsel",
+    areas: "EU Foundation Setup · Polish Legal Guidance · Organizational Counsel",
+    initials: "RS",
+    photo: "/assets/rafal-sikora-with-dog.png",
+    photoAlt: "Rafał Sikora smiling with a rescued dog indoors.",
+    summary: "Advises K9GR on Polish foundation structure, legal guidance, and organizational counsel.",
+    bio: [
+      "Rafał Sikora has been instrumental in setting up the K9GR EU Polish Foundation, advising and guiding the organization through the complicated Polish government structure.",
+      "He is a well-known and highly regarded attorney. Along with his wife and two daughters, Rafał adopted Izzy, who K9GR saved from Izium, Ukraine."
+    ]
   }
 ];
 
@@ -169,7 +182,7 @@ const slugify = (name: string) => name.toLowerCase().replaceAll(" ", "-");
       <SectionHeading
         eyebrow="Team roles"
         title="Current Team And Support Roles."
-        text="Jon Barocas serves as Executive Director. Daniel Holz, Geoffrey Thayer, Christina Irinco, and Pam Callan are listed with the Executive Staff Team. Brian Rutter is listed under photography and field documentation support."
+        text="Jon Barocas serves as Executive Director. Daniel Holz, Geoffrey Thayer, Christina Irinco, and Pam Callan are listed with the Executive Staff Team. Brian Rutter supports photography and field documentation, and Rafał Sikora serves as General Counsel."
       />
       <div class="team-grid">
         {team.map((member) => (
