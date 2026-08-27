@@ -4,7 +4,6 @@ import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import ProgramCard from "../components/ProgramCard.astro";
 import CTASection from "../components/CTASection.astro";
-import QuoteBand from "../components/QuoteBand.astro";
 
 const programs = [
   {
@@ -51,6 +50,27 @@ const actions = [
   title="K9 Global Rescue"
   description="K9 Global Rescue is a mission-driven nonprofit working globally for animals in crisis through rescue, relief, transport, medical care, and advocacy."
 >
+  <section class="belief-hero">
+    <div class="container belief-hero__inner">
+      <div class="belief-hero__copy">
+        <p class="eyebrow">Core belief</p>
+        <h1>“Saving one dog won’t change the world, but for that one dog the world will change forever.”<sup>™</sup></h1>
+        <p class="lead">Every rescue begins with one life. Every safe transport, medical case, and partner mission starts there.</p>
+        <div class="button-row">
+          <a class="button primary" href="/donate/">Donate</a>
+          <a class="button secondary" href="/volunteer/">Volunteer</a>
+          <a class="button secondary" href="/operations/">Learn About Our Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-strip" aria-label="K9 Global Rescue values">
+    <div class="container">
+      <p>Action · Compassion · Hope</p>
+    </div>
+  </section>
+
   <Hero
     eyebrow="United States 501(c)(3) nonprofit and EU registered NGO"
     title="Global Rescue For Animals In Crisis."
@@ -61,13 +81,10 @@ const actions = [
     secondaryHref="/volunteer/"
     tertiaryLabel="Learn About Our Work"
     tertiaryHref="/operations/"
+    backgroundImage="/assets/operations-hero-k9gr-rescue.png"
+    backgroundPosition="center"
+    mobileBackgroundPosition="63% center"
   />
-
-  <section class="values-strip" aria-label="K9 Global Rescue values">
-    <div class="container">
-      <p>Action · Compassion · Hope</p>
-    </div>
-  </section>
 
   <CTASection
     title="Give. Volunteer. Move Rescue Forward."
@@ -96,10 +113,6 @@ const actions = [
     </div>
   </section>
 
-  <QuoteBand
-    support="Every rescue begins with one life. Every safe transport, medical case, and partner mission starts there."
-  />
-
   <section class="section alt">
     <div class="container">
       <SectionHeading
@@ -124,6 +137,85 @@ const actions = [
 </Layout>
 
 <style>
+  .belief-hero {
+    position: relative;
+    min-height: 650px;
+    display: grid;
+    align-items: end;
+    overflow: hidden;
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.97) 0%, rgba(0, 0, 0, 0.84) 46%, rgba(0, 0, 0, 0.58) 100%),
+      linear-gradient(135deg, rgba(232, 180, 72, 0.18), transparent 36%),
+      url("/assets/operations-hero-k9gr-rescue.png");
+    background-position: center;
+    background-size: cover;
+    color: var(--color-ivory);
+    isolation: isolate;
+  }
+
+  .belief-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(90deg, rgba(232, 180, 72, 0.09) 1px, transparent 1px),
+      linear-gradient(rgba(232, 180, 72, 0.08) 1px, transparent 1px);
+    background-size: 70px 70px;
+    mask-image: linear-gradient(90deg, #000 0%, transparent 72%);
+  }
+
+  .belief-hero::after {
+    content: "K9";
+    position: absolute;
+    right: clamp(-2rem, 2vw, 4rem);
+    bottom: -0.2em;
+    z-index: -1;
+    color: rgba(232, 180, 72, 0.08);
+    font-size: clamp(13rem, 33vw, 30rem);
+    font-weight: 950;
+    line-height: 0.8;
+    letter-spacing: 0;
+  }
+
+  .belief-hero__inner {
+    padding: 104px 0 82px;
+  }
+
+  .belief-hero__copy {
+    max-width: 1040px;
+    border-left: 5px solid var(--color-gold);
+    padding-left: clamp(1rem, 3vw, 2.5rem);
+  }
+
+  .belief-hero .eyebrow {
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+  }
+
+  .belief-hero h1 {
+    max-width: 990px;
+    font-size: clamp(2.65rem, 7vw, 6.25rem);
+    letter-spacing: 0;
+    line-height: 0.94;
+    margin: 0;
+    text-transform: none;
+  }
+
+  .belief-hero sup {
+    color: var(--color-gold);
+    font-size: 0.25em;
+    line-height: 0;
+    margin-left: 0.08em;
+    vertical-align: super;
+  }
+
+  .belief-hero .lead {
+    max-width: 720px;
+    margin: 1.35rem 0 1.75rem;
+    color: rgba(255, 255, 255, 0.86);
+  }
+
   .values-strip {
     border-block: 1px solid rgba(232, 180, 72, 0.32);
     background: #000000;
@@ -142,5 +234,20 @@ const actions = [
 
   .action-card {
     min-height: 0;
+  }
+
+  @media (max-width: 820px) {
+    .belief-hero {
+      min-height: 620px;
+      background-position: 63% center;
+    }
+
+    .belief-hero__inner {
+      padding: 90px 0 58px;
+    }
+
+    .belief-hero__copy {
+      border-left-width: 4px;
+    }
   }
 </style>
