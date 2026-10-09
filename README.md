@@ -87,7 +87,7 @@ No real domain is connected in this repo. Domain/DNS setup should happen separat
 - Donate: donation support areas and confirmed Give Lively, Venmo, PayPal, and Stripe / Credit Card links
 - Media / News: Dog Warriors section, YouTube channel section, Markdown news collection
 - Partners: partner category overview and inquiry path
-- Contact: Netlify Forms-ready inquiry form and organization/domain ownership disclosure
+- Contact: Netlify Forms-ready inquiry form, organization/domain ownership disclosure, and public legal identifiers and headquarters details
 
 ## Internal Review Notes
 
@@ -105,7 +105,7 @@ K9GR should keep these items in the internal pre-publication checklist:
 - South Korea dog meat ban wording and implementation date details
 - Rescue story copy and images for Gracie, Apollo and Juno, Jesse, Ukraine, and Korea
 - Dog Warriors/media claims, external links, event details, and rights-cleared media
-- Public contact details beyond `info@k9globalrescue.org`, if K9GR wants additional contacts listed
+- Public contact details beyond `info@k9globalrescue.org` and the listed headquarters address, if K9GR wants additional contacts listed
 - Team bio details, functional area labels, credentials, affiliations, support classifications, and service-history wording
 - Historical Middle East or disease mitigation work should only be added later as a rescue story or update if K9GR provides approved public content.
 
