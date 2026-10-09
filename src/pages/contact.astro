@@ -73,6 +73,18 @@ import BackButton from "../components/BackButton.astro";
       </form>
     </div>
   </section>
+
+  <section class="section legal-disclosure" aria-label="Organization and domain information">
+    <div class="container">
+      <aside class="panel organization-notice">
+        <p>
+          K9 Global Rescue (K9GR) is a registered 501(c)(3) nonprofit organization. K9 Global Rescue owns and operates both
+          <a href="https://k9globalrescue.org">k9globalrescue.org</a> and <a href="https://k9gr.org">k9gr.org</a> as official organizational domains.
+          <a href="https://k9gr.org">K9GR.org</a> serves as our primary Google Workspace and organizational email domain. Both domains belong to and are operated by the same nonprofit organization.
+        </p>
+      </aside>
+    </div>
+  </section>
 </Layout>
 
 <style>
@@ -90,5 +102,22 @@ import BackButton from "../components/BackButton.astro";
 
   .bot-field {
     display: none;
+  }
+
+  .legal-disclosure {
+    padding-top: 0;
+  }
+
+  .organization-notice {
+    border-left: 3px solid var(--color-gold);
+    max-width: 920px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .organization-notice p {
+    color: var(--color-ink-soft);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
   }
 </style>

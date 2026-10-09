@@ -87,7 +87,7 @@ No real domain is connected in this repo. Domain/DNS setup should happen separat
 - Donate: donation support areas and confirmed Give Lively, Venmo, PayPal, and Stripe / Credit Card links
 - Media / News: Dog Warriors section, YouTube channel section, Markdown news collection
 - Partners: partner category overview and inquiry path
-- Contact: Netlify Forms-ready inquiry form
+- Contact: Netlify Forms-ready inquiry form and organization/domain ownership disclosure
 
 ## Internal Review Notes
 
@@ -99,7 +99,7 @@ K9GR should keep these items in the internal pre-publication checklist:
   - PayPal: `https://paypal.me/k9globalrescue`
   - Stripe / Credit Card: `https://buy.stripe.com/7sI16l3a3eG6gSY144`
 - Confirm volunteer intake wording and placement guidance
-- Final organization/legal wording for 501(c)(3), EU NGO, and any registration references
+- Final organization/legal wording for EU NGO and any additional registration references
 - Current program details, partner names, and active deployment claims
 - Any specific Ukraine trip counts, locations, or current field operations
 - South Korea dog meat ban wording and implementation date details
