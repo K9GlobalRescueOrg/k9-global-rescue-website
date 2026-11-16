@@ -1,6 +1,6 @@
 ---
 import Layout from "../components/Layout.astro";
-import { products, productAction, ornamentPacks } from "../data/store";
+import { products, productAction, ornamentPacks, ornamentImages } from "../data/store";
 const [ornaments, ...merch] = products;
 
 ---
@@ -18,14 +18,17 @@ const [ornaments, ...merch] = products;
 
   <section class="holiday-section" id="holiday-ornaments" aria-labelledby="holiday-title">
     <div class="container holiday-grid">
-      <div class:list={["holiday-art", { "has-photo": ornaments.image }]}>
-        {ornaments.image ? <img class="product-photo" src={ornaments.image} alt={ornaments.imageAlt} fetchpriority="high" /> : (
-          <div class="brand-art" aria-label="K9 Global Rescue holiday collection">
-            <p class="eyebrow">The holiday collection</p>
-            <img src="/assets/k9-global-rescue-logo.png" alt="K9 Global Rescue — For all without a voice" width="360" height="240" />
-            <p class="art-signoff">For all without a voice.</p>
-          </div>
-        )}
+      <div class="ornament-gallery" aria-label="Ornament images">
+        <a class="holiday-art" href={ornaments.image!} target="_blank" rel="noopener noreferrer" aria-label="View paired ornament image full size">
+          <img class="product-photo" src={ornaments.image!} alt={ornaments.imageAlt} width="592" height="664" fetchpriority="high" />
+        </a>
+        <div class="detail-images">
+          {ornamentImages.map((image) => <a href={image.src} target="_blank" rel="noopener noreferrer">
+            <img src={image.src} alt={image.alt} width="1254" height="1254" loading="lazy" />
+            <span>{image.label} <span aria-hidden="true">↗</span></span>
+          </a>)}
+        </div>
+        <p class="gallery-note">Select an image to view it full size.</p>
       </div>
       <div class="holiday-copy">
         <p class="eyebrow">Limited edition</p>
@@ -81,10 +84,13 @@ const [ornaments, ...merch] = products;
   .holiday-section { background: #0d0d09; padding-block: 36px 56px; scroll-margin-top: 140px; }
   .holiday-grid { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: clamp(28px, 5vw, 72px); }
   .holiday-art { min-height: 390px; display: grid; place-items: center; background: #000; border: 1px solid var(--color-border); }
-  .brand-art { width: 100%; text-align: center; padding: 36px 20px; }
-  .brand-art img { display: block; width: min(100%, 360px); height: 220px; object-fit: contain; margin: 12px auto; }
-  .art-signoff { margin: 0; color: var(--color-ink-soft); font-size: .88rem; letter-spacing: .06em; }
-  .product-photo { width: 100%; height: auto; max-height: 540px; object-fit: contain; }
+  .product-photo { display: block; width: 100%; height: auto; max-height: 460px; object-fit: contain; background: #fff; }
+  .holiday-art { background: #fff; }
+  .detail-images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+  .detail-images a { color: var(--color-ivory); text-decoration: none; font-size: .8rem; }
+  .detail-images img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; background: #fff; }
+  .detail-images a > span { display: block; padding-block: 10px 4px; }
+  .gallery-note { font-size: .8rem; color: var(--color-ink-soft); margin: 8px 0 0; }
   .holiday-copy h2 { font-size: clamp(2.4rem, 4.4vw, 4rem); margin-bottom: 22px; }
   .holiday-copy > p:not(.eyebrow):not(.price) { color: var(--color-ink-soft); max-width: 460px; }
   .pack-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
@@ -116,7 +122,7 @@ const [ornaments, ...merch] = products;
   @media (max-width: 760px) {
     .holiday-grid, .merch-grid { grid-template-columns: 1fr; }
     .holiday-art { min-height: 290px; }
-    .brand-art img { height: 170px; }
+    .product-photo { max-height: 390px; }
     .collection-heading, .help-inner { align-items: flex-start; flex-direction: column; }
     .merch-grid { gap: 36px; }
     .collection-nav { gap: 12px 24px; }

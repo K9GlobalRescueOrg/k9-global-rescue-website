@@ -17,8 +17,8 @@ export const products: StoreProduct[] = [
     name: "K9 Holiday Ornaments",
     category: "Holiday collection",
     description: "More than a decoration: a symbol of compassion, courage, and our commitment to saving animals in need. Every purchase helps support our rescue missions, delivering food, medical care, and hope to animals in war zones and disaster areas.",
-    image: null,
-    imageAlt: "",
+    image: "/assets/store/holiday-ornaments-paired.jpg",
+    imageAlt: "Two K9 Global Rescue ornament views with gold hanging cords: the rescue quote design and the dog beside a rescue vehicle design.",
     priceLabel: null,
     checkoutUrl: null,
   },
@@ -57,4 +57,9 @@ export const ornamentPacks = [
   { quantity: 2, price: "$44.95", url: "https://buy.stripe.com/5kQaEXfuD0so0GEd82es003" },
   { quantity: 3, price: "$59.95", url: "https://buy.stripe.com/eVq3cv6Y73EAfBy9VQes002" },
   { quantity: 5, price: "$99.95", url: "https://buy.stripe.com/6oU28r3LV7UQ896fgaes001" },
+];
+
+export const ornamentImages = [
+  { src: "/assets/store/holiday-ornament-quote.jpg", label: "Rescue quote design", alt: "Gold-edged navy K9 Global Rescue ornament with laurel branches, a paw print, and the quote: Saving one dog won’t change the world, but for that one dog the world will change forever." },
+  { src: "/assets/store/holiday-ornament-rescue.png", label: "Action · Compassion · Hope design", alt: "Gold-edged K9 Global Rescue ornament depicting a German shepherd beside a rescue vehicle in a snowy setting, with Action, Compassion, Hope lettering." },
 ];
