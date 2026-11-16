@@ -14,10 +14,6 @@ const { collection } = Astro.props;
     </div>
     <p class="availability">All designs sold out</p>
   </div>
-  {collection.id === "shirts" && <details class="front-view">
-    <summary>View T-shirt front</summary>
-    <img src="/assets/store/t-shirt-front.jpeg" alt="Front of a black K9 Global Rescue T-shirt with a small gold logo on the left chest." width="1500" height="1500" loading="lazy" />
-  </details>}
   <div class="clothing-grid">
     {collection.items.map((item) => <article class="clothing-item">
       <a href={item.image} target="_blank" rel="noopener noreferrer" aria-label={`View ${item.name} image full size`}>
@@ -28,6 +24,10 @@ const { collection } = Astro.props;
       <p class="view-label">Back design</p>
     </article>)}
   </div>
+  {collection.id === "shirts" && <details class="front-view">
+    <summary>View T-shirt front</summary>
+    <img src="/assets/store/t-shirt-front.jpeg" alt="Front of a black K9 Global Rescue T-shirt with a small gold logo on the left chest." width="1500" height="1500" loading="lazy" />
+  </details>}
 </section>
 
 <style>
@@ -41,7 +41,7 @@ const { collection } = Astro.props;
   .sold-out { display: inline-block; margin: 16px 0 12px; padding: 4px 10px; border: 1px solid var(--color-border); color: var(--color-gold); font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; }
   h4 { font-size: 1.1rem; line-height: 1.4; margin: 0 0 6px; }
   .view-label { color: var(--color-ink-soft); font-size: .85rem; margin: 0; }
-  .front-view { margin-bottom: 24px; }
+  .front-view { margin-top: 24px; }
   summary { cursor: pointer; color: var(--color-gold); padding-block: 12px; width: fit-content; }
   .front-view img { display: block; width: min(100%, 380px); height: auto; margin-top: 12px; }
   a:focus-visible, summary:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 5px; }
