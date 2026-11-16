@@ -23,11 +23,6 @@ export const products: StoreProduct[] = [
     checkoutUrl: null,
   },
   {
-    id: "shirts", name: "Shirts", category: "Wear the mission",
-    description: "Ask about K9 Global Rescue shirts, designs, and sizes.",
-    image: null, imageAlt: "", priceLabel: null, checkoutUrl: null,
-  },
-  {
     id: "mugs", name: "Mugs", category: "Everyday essentials",
     description: "Bring K9 Global Rescue to your daily coffee routine. Contact us for mug options.",
     image: null, imageAlt: "", priceLabel: null, checkoutUrl: null,
@@ -63,3 +58,84 @@ export const ornamentImages = [
   { src: "/assets/store/holiday-ornament-quote.jpg", label: "Rescue quote design", alt: "Gold-edged navy K9 Global Rescue ornament with laurel branches, a paw print, and the quote: Saving one dog won’t change the world, but for that one dog the world will change forever." },
   { src: "/assets/store/holiday-ornament-rescue.png", label: "Action · Compassion · Hope design", alt: "Gold-edged K9 Global Rescue ornament depicting a German shepherd beside a rescue vehicle in a snowy setting, with Action, Compassion, Hope lettering." },
 ];
+
+// Clothing is display-only while sold out; no checkout links are rendered.
+export const clothingCollections = [
+  {
+    "id": "hoodies",
+    "title": "Hoodies",
+    "model": "Gildan SF500 Softstyle hooded sweatshirt",
+    "items": [
+      {
+        "id": "be-kind-hoodie",
+        "name": "Be Kind to Every Kind Hoodie",
+        "image": "/assets/store/be-kind-hoodie.jpeg",
+        "imageAlt": "Back view of a black K9 Global Rescue hoodie with the gold Be Kind to Every Kind design.",
+        "soldOut": true
+      },
+      {
+        "id": "classic-logo-hoodie",
+        "name": "Classic Logo Hoodie",
+        "image": "/assets/store/classic-logo-hoodie.png",
+        "imageAlt": "Back view of a black K9 Global Rescue hoodie with the gold Classic Logo design.",
+        "soldOut": true
+      },
+      {
+        "id": "guardian-of-the-pack-hoodie",
+        "name": "Guardian of the Pack Hoodie",
+        "image": "/assets/store/guardian-of-the-pack-hoodie.png",
+        "imageAlt": "Back view of a black K9 Global Rescue hoodie with the gold Guardian of the Pack design.",
+        "soldOut": true
+      },
+      {
+        "id": "pointer-and-cat-hoodie",
+        "name": "Pointer & Cat Hoodie",
+        "image": "/assets/store/pointer-and-cat-hoodie.jpeg",
+        "imageAlt": "Back view of a black K9 Global Rescue hoodie with the gold Pointer & Cat design.",
+        "soldOut": true
+      },
+      {
+        "id": "rescue-love-hoodie",
+        "name": "You Can’t Buy Love Hoodie",
+        "image": "/assets/store/rescue-love-hoodie.jpeg",
+        "imageAlt": "Back view of a black K9 Global Rescue hoodie with the gold You Can’t Buy Love design.",
+        "soldOut": true
+      }
+    ]
+  },
+  {
+    "id": "shirts",
+    "title": "T-shirts",
+    "model": "Gildan 64000 Softstyle adult T-shirt",
+    "items": [
+      {
+        "id": "be-kind-t-shirt",
+        "name": "Be Kind to Every Kind T-shirt",
+        "image": "/assets/store/be-kind-t-shirt.jpeg",
+        "imageAlt": "Back view of a black K9 Global Rescue t-shirt with the gold Be Kind to Every Kind design.",
+        "soldOut": true
+      },
+      {
+        "id": "classic-logo-t-shirt",
+        "name": "Classic Logo T-shirt",
+        "image": "/assets/store/classic-logo-t-shirt.jpeg",
+        "imageAlt": "Back view of a black K9 Global Rescue t-shirt with the gold Classic Logo design.",
+        "soldOut": true
+      },
+      {
+        "id": "pointer-and-cat-t-shirt",
+        "name": "Pointer & Cat T-shirt",
+        "image": "/assets/store/pointer-and-cat-t-shirt.jpeg",
+        "imageAlt": "Back view of a black K9 Global Rescue t-shirt with the gold Pointer & Cat design.",
+        "soldOut": true
+      },
+      {
+        "id": "rescue-love-t-shirt",
+        "name": "You Can’t Buy Love T-shirt",
+        "image": "/assets/store/rescue-love-t-shirt.jpeg",
+        "imageAlt": "Back view of a black K9 Global Rescue t-shirt with the gold You Can’t Buy Love design.",
+        "soldOut": true
+      }
+    ]
+  }
+] as const;

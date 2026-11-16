@@ -85,7 +85,7 @@ No real domain is connected in this repo. Domain/DNS setup should happen separat
 - Rescue Stories: story index for Gracie, Apollo and Juno, Jesse, Ukraine, and Korea
 - Volunteer: opportunity overview and official Google Form intake link
 - Donate: donation support areas and confirmed Give Lively, Venmo, PayPal, and Stripe / Credit Card links
-- Store: holiday ornament feature with four Stripe pack checkout links, plus shirts, mugs, and keychain inquiry paths; see [store maintenance](docs/reference/store.md)
+- Store: holiday ornament feature with four Stripe pack checkout links, sold-out hoodie and T-shirt galleries, plus mugs and keychain inquiry paths; see [store maintenance](docs/reference/store.md)
 - Media / News: Dog Warriors section, YouTube channel section, Markdown news collection
 - Partners: partner category overview and inquiry path
 - Contact: Netlify Forms-ready inquiry form, organization/domain ownership disclosure, and public legal identifiers and headquarters details
